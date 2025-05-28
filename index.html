@@ -924,7 +924,20 @@ section:not(#hero) {
   ========================== -->
 <section class="fade-in" id="case-form">
 <h2>פתיחת תיק</h2>
-<iframe frameborder="0" height="1200" marginheight="0" marginwidth="0" src="https://docs.google.com/forms/d/e/1FAIpQLSeGATL-0AcGUFH7hYddIWjbkhSXVDbxj-126KxmsNvM5riPWg/viewform?embedded=true" width="100%">טוען…</iframe>
+<form action="https://docs.google.com/forms/d/e/1FAIpQLSeGATL-0AcGUFH7hYddIWjbkhSXVDbxj-126KxmsNvM5riPWg/formResponse" method="POST" onsubmit="formSubmitted=true;" style="max-width:600px;margin:auto;background:#f2f2f2;padding:20px;border-radius:12px;box-shadow:0 0 20px rgba(0,0,0,0.1);" target="hidden_iframe">
+<label style="color:#000;font-weight:bold;display:block;margin-bottom:5px;">Full Name</label>
+<input name="entry.940027313" required="" style="width:100%;padding:10px;margin-bottom:15px;border-radius:8px;border:1px solid #ccc;" type="text"/>
+<label style="color:#000;font-weight:bold;display:block;margin-bottom:5px;">E-mail</label>
+<input name="entry.1610041861" required="" style="width:100%;padding:10px;margin-bottom:15px;border-radius:8px;border:1px solid #ccc;" type="email"/>
+<label style="color:#000;font-weight:bold;display:block;margin-bottom:5px;">Phone Number</label>
+<input name="entry.809988113" style="width:100%;padding:10px;margin-bottom:15px;border-radius:8px;border:1px solid #ccc;" type="tel"/>
+<label style="color:#000;font-weight:bold;display:block;margin-bottom:5px;">Wallet Address</label>
+<input name="entry.1498249720" style="width:100%;padding:10px;margin-bottom:15px;border-radius:8px;border:1px solid #ccc;" type="url"/>
+<label style="color:#000;font-weight:bold;display:block;margin-bottom:5px;">Case Details / Additional Information</label>
+<textarea name="entry.2012789313" rows="5" style="width:100%;padding:10px;margin-bottom:20px;border-radius:8px;border:1px solid #ccc;"></textarea>
+<button style="background:#0a58ca;color:#fff;border:none;padding:12px 25px;border-radius:8px;cursor:pointer;" type="submit">שליחה</button>
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+</form>
 </section>
 <!-- =======================
        JavaScript Interactivity
