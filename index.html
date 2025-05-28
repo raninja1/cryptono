@@ -1,14 +1,928 @@
-
 <!DOCTYPE html>
 
-<html dir="rtl" lang="he">
+<html lang="he">
 <head>
 <meta charset="utf-8"/>
-<title>טופס יצירת קשר</title>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-</head>
-<body style="background:#121212;color:white;font-family:sans-serif;">
-<section id="case-form">
+<title>Crypto Trace - החזרת כספים</title>
+<!-- שימוש בגופן Urbanist -->
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    /* =======================
+       Global Styles
+    ========================== */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Urbanist', sans-serif;
+      background-color: #151515;
+      color: #eee;
+      direction: rtl;
+      line-height: 1.6;
+    }
+    a {
+      color: #00e0ff;
+      text-decoration: none;
+    }
+    section {
+      padding: 60px 20px;
+      position: relative;
+    }
+    h1, h2, h3 {
+      margin: 0 0 20px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    /* =======================
+       Hero Section
+    ========================== */
+    #hero {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
+    #hero video.background-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+    #hero .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      /* אפשר להוסיף כאן אפקטים של חלקיקונים או קווים בעזרת אנימציות CSS/JS */
+      z-index: 2;
+    }
+    #hero .hero-content {
+      position: relative;
+      z-index: 3;
+      text-align: center;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 0 20px;
+    }
+    #hero .hero-content h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+    #hero .hero-content h2 {
+      font-size: 1.5em;
+      margin-bottom: 30px;
+    }
+    .cta-button {
+      background: #00e0ff;
+      border: none;
+      padding: 15px 30px;
+      color: #000;
+      font-size: 1em;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: box-shadow 0.3s, transform 0.2s;
+    }
+    .cta-button:hover {
+      box-shadow: 0 0 15px rgba(0, 224, 255, 0.6);
+    }
+    .cta-button:active {
+      transform: scale(0.98);
+    }
+    .featured-logos {
+      margin-top: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+    .featured-logos p {
+      margin: 0 10px;
+      font-weight: bold;
+    }
+    .featured-logos img {
+      height: 30px;
+    }
+    /* =======================
+       What We Do Section
+    ========================== */
+    #what-we-do .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    #what-we-do .card {
+      background: #222;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    #what-we-do .card:hover {
+      transform: translateY(-5px);
+    }
+    #what-we-do .card .icon {
+      margin-bottom: 15px;
+    }
+    #what-we-do .card .card-hover {
+      position: absolute;
+      bottom: -100%;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 224, 255, 0.1);
+      padding: 10px;
+      transition: bottom 0.3s;
+      font-size: 0.9em;
+    }
+    #what-we-do .card:hover .card-hover {
+      bottom: 0;
+    }
+    /* =======================
+       Services Section
+    ========================== */
+    #services .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    #services .service-card {
+      background: #222;
+      padding: 25px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    #services .service-card .service-icon {
+      margin-bottom: 15px;
+    }
+    #services .service-card .info-button {
+      background: #00e0ff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.3s;
+      margin-top: 15px;
+    }
+    #services .service-card .info-button:hover {
+      background: #00c0e0;
+    }
+    /* =======================
+       Modal Popup Styles
+    ========================== */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+    }
+    .modal-content {
+      background-color: #333;
+      margin: 10% auto;
+      padding: 20px;
+      border: 1px solid #00e0ff;
+      width: 80%;
+      border-radius: 8px;
+      color: #fff;
+      position: relative;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+    .modal-content .close {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 1.5em;
+      cursor: pointer;
+    }
+    /* =======================
+       How It Works Section
+    ========================== */
+    #how-it-works .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      text-align: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    #how-it-works .step {
+      background: #222;
+      padding: 20px;
+      border-radius: 8px;
+      opacity: 0;
+      animation: fadeInUp 0.8s forwards;
+    }
+    #how-it-works .step:nth-child(1) { animation-delay: 0.2s; }
+    #how-it-works .step:nth-child(2) { animation-delay: 0.4s; }
+    #how-it-works .step:nth-child(3) { animation-delay: 0.6s; }
+    #how-it-works .step:nth-child(4) { animation-delay: 0.8s; }
+    .step-number {
+      font-size: 2em;
+      background: #00e0ff;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      border-radius: 50%;
+      margin: 0 auto 10px;
+      color: #000;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    /* =======================
+       Case Studies Section
+    ========================== */
+    #case-studies .carousel {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 10px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    #case-studies .case-card {
+      background: #222;
+      border-radius: 8px;
+      min-width: 280px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    #case-studies .case-image {
+      height: 150px;
+      background-size: cover;
+      background-position: center;
+      filter: blur(1px);
+    }
+    #case-studies .case-info {
+      padding: 15px;
+      text-align: center;
+    }
+    #case-studies .case-info button {
+      background: #00e0ff;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.3s;
+      margin-top: 10px;
+    }
+    #case-studies .case-info button:hover {
+      background: #00c0e0;
+    }
+    /* =======================
+       Technology Section
+    ========================== */
+    #technology .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      text-align: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    #technology .tech-card {
+      background: #222;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    #technology .tech-card a {
+      display: inline-block;
+      margin-top: 10px;
+      color: #00e0ff;
+    }
+    /* =======================
+       Partners Section
+    ========================== */
+    #partners .partners-carousel {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    #partners .partner {
+      position: relative;
+    }
+    #partners .partner img {
+      width: 100px;
+      height: auto;
+    }
+    #partners .tooltip {
+      visibility: hidden;
+      background-color: #00e0ff;
+      color: #000;
+      text-align: center;
+      padding: 5px;
+      border-radius: 6px;
+      position: absolute;
+      bottom: 110%;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.3s;
+      font-size: 0.9em;
+    }
+    #partners .partner:hover .tooltip {
+      visibility: visible;
+      opacity: 1;
+    }
+    /* =======================
+       FAQ Section
+    ========================== */
+    #faq .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      background: #222;
+      margin: 10px 0;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .faq-question {
+      padding: 15px;
+      cursor: pointer;
+      border-bottom: 1px solid #333;
+      font-weight: bold;
+    }
+    .faq-answer {
+      padding: 15px;
+      display: none;
+    }
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+    .faq-filter {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .faq-filter input {
+      padding: 10px;
+      width: 80%;
+      max-width: 400px;
+      border: 1px solid #333;
+      border-radius: 8px;
+      background: #111;
+      color: #eee;
+    }
+    /* =======================
+       Case Form Section
+    ========================== */
+    #case-form form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #222;
+      padding: 30px;
+      border-radius: 8px;
+    }
+    #case-form form label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    #case-form form input,
+    #case-form form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #333;
+      border-radius: 8px;
+      background: #111;
+      color: #eee;
+    }
+    #case-form .submit-button {
+      background: #00e0ff;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    #case-form .submit-button:hover {
+      background: #00c0e0;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+<style>
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease-out forwards;
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style><style>
+@keyframes backgroundPulse {
+  0% { background-color: #151515; }
+  50% { background-color: #222; }
+  100% { background-color: #151515; }
+}
+body {
+  animation: backgroundPulse 20s infinite ease-in-out;
+}
+</style><style>
+button, .cta-button, .info-button, .submit-button {
+  border-radius: 16px !important;
+  transition: all 0.3s ease !important;
+  padding: 14px 28px !important;
+  font-weight: bold !important;
+}
+button:hover, .cta-button:hover, .info-button:hover, .submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(0, 224, 255, 0.6);
+}
+
+section {
+  padding-top: 60px !important;
+  padding-bottom: 60px !important;
+}
+</style><style>
+section:not(:last-of-type)::after {
+  content: '';
+  display: block;
+  width: 80%;
+  margin: 40px auto 0;
+  border-bottom: 1px solid #333;
+  opacity: 0.3;
+}
+</style><style>
+section:nth-of-type(odd) {
+  background-color: #151515;
+}
+section:nth-of-type(even) {
+  background-color: #222;
+}
+section {
+  transition: background-color 1s ease-in-out;
+}
+section:not(:last-of-type)::after {
+  content: '';
+  display: block;
+  width: 90%;
+  margin: 30px auto 0;
+  border-bottom: 1px solid #444;
+  opacity: 0.4;
+}
+</style><style>
+header {
+  background: #000;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #00e0ff;
+}
+header .logo {
+  font-weight: bold;
+  font-size: 1.7em;
+  color: #00e0ff;
+  letter-spacing: 1px;
+}
+header nav a {
+  color: #eee;
+  padding: 8px 16px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+header nav a:hover {
+  background-color: rgba(0, 224, 255, 0.15);
+  color: #00e0ff;
+}
+header nav a:active {
+  background-color: rgba(0, 224, 255, 0.3);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+</style><link href="https://fonts.googleapis.com/css2?family=Heebo:wght@500;600&amp;display=swap" rel="stylesheet"/><style>
+header nav a {
+  font-family: 'Heebo', sans-serif;
+  font-weight: 600;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+</style><style>
+header nav a {
+  font-family: 'Heebo', sans-serif;
+  font-weight: 600;
+  margin: 0 0.3rem !important;
+  padding: 6px 12px !important;
+}
+</style><style>
+section:not(#hero) {
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(0, 224, 255, 0.1);
+  border-radius: 16px;
+  padding: 40px 20px;
+  margin: 60px 10px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 0 10px rgba(0, 224, 255, 0.05);
+}
+</style></head>
+<body style="background: url('https://i.postimg.cc/3NQbVBmZ/7db8882bd-2773-4990-8858-31605c5bef55-ef71.png') center center / cover no-repeat fixed; color: #eee; direction: rtl; line-height: 1.6; font-family: 'Urbanist', sans-serif; margin: 0;">
+<header style="background:#000; padding:1rem 2rem; position:sticky; top:0; z-index:1000; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #00e0ff;">
+<div class="logo" style="font-weight:bold; font-size:1.5em; color:#00e0ff;">CRYPTONO</div>
+<nav style="display:flex; gap:1.5rem;">
+<a href="#crypto-scam-alert">בית</a>
+<a href="#what-we-do">מה אנחנו עושים</a>
+<a href="#services">שירותים</a>
+<a href="#how-it-works">תהליך</a>
+<a href="#case-studies">הצלחות</a>
+<a href="#technology">טכנולוגיה</a>
+<a href="#faq">שאלות</a>
+<a href="#case-form">פתח תיק</a>
+</nav>
+</header>
+<!-- =======================
+       Scam Alert Section
+=========================== -->
+<section class="fade-in" id="crypto-scam-alert" style="text-align:center;">
+<h2 style="font-size: 2.2em; color: #00e0ff; margin-bottom: 20px;">
+    נפלתם בהונאת קריפטו? לא הכל אבוד!
+  </h2>
+<p style="font-size: 1.2em; color: #eee; max-width: 600px; margin: 0 auto 30px;">
+    אנחנו חוקרים, מאתרים ומלווים משפטית להחזרת כספים
+  </p>
+<a class="cta-button" href="#case-form" style="
+    background: #00e0ff;
+    color: #000;
+    padding: 14px 30px;
+    font-size: 1.1em;
+    border-radius: 16px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 224, 255, 0.4);
+  ">
+    פתח תיק חקירה עכשיו
+  </a>
+</section>
+<!-- =======================
+       Hero Section
+  ========================== -->
+<!-- =======================
+       What We Do Section
+  ========================== -->
+<section class="fade-in" id="what-we-do">
+<h2>איך אנחנו יכולים לעזור לכם?</h2>
+<div class="card-grid">
+<div class="card">
+<div class="icon">
+<!-- Placeholder SVG -->
+<svg height="50" width="50"><circle cx="25" cy="25" fill="none" r="20" stroke="#00e0ff" stroke-width="2"></circle></svg>
+</div>
+<h3>איתור כספים</h3>
+<p>איתור כספים גנובים במהירות</p>
+<div class="card-hover">פירוט נוסף על איתור כספים גנובים</div>
+</div>
+<div class="card">
+<div class="icon">
+<svg height="50" width="50"><rect fill="none" height="30" stroke="#00e0ff" stroke-width="2" width="30" x="10" y="10"></rect></svg>
+</div>
+<h3>בלוקצ'יין</h3>
+<p>ניתוח טרנזקציות ברשתות</p>
+<div class="card-hover">פירוט נוסף על ניתוח רשתות</div>
+</div>
+<div class="card">
+<div class="icon">
+<svg height="50" width="50"><polygon fill="none" points="25,5 45,45 5,45" stroke="#00e0ff" stroke-width="2"></polygon></svg>
+</div>
+<h3>תמיכה משפטית</h3>
+<p>דוחות לעורכי דין ומשפט</p>
+<div class="card-hover">פירוט נוסף על תמיכה משפטית</div>
+</div>
+<div class="card">
+<div class="icon">
+<svg height="50" width="50"><line stroke="#00e0ff" stroke-width="2" x1="5" x2="45" y1="5" y2="45"></line><line stroke="#00e0ff" stroke-width="2" x1="45" x2="5" y1="5" y2="45"></line></svg>
+</div>
+<h3>חסימת ארנקים</h3>
+<p>דיווח לאכיפה ובורסות</p>
+<div class="card-hover">פירוט נוסף על חסימת ארנקים חשודים</div>
+</div>
+<div class="card">
+<div class="icon">
+<svg height="50" width="50"><circle cx="25" cy="25" fill="none" r="20" stroke="#00e0ff" stroke-width="2"></circle><line stroke="#00e0ff" stroke-width="2" x1="25" x2="25" y1="5" y2="45"></line></svg>
+</div>
+<h3>אבטחה</h3>
+<p>עבודה עם מומחי סייבר</p>
+<div class="card-hover">פירוט נוסף על שיתוף פעולה עם חברות אבטחה</div>
+</div>
+<div class="card">
+<div class="icon">
+<svg height="50" width="50"><rect fill="none" height="30" stroke="#00e0ff" stroke-width="2" width="30" x="10" y="10"></rect><circle cx="25" cy="25" fill="#00e0ff" r="5"></circle></svg>
+</div>
+<h3>עיתונאים</h3>
+<p>תחקירים ותמיכה לתקשורת</p>
+<div class="card-hover">פירוט נוסף על שירותים לעיתונאים וגופי מודיעין</div>
+</div>
+</div>
+</section>
+<!-- =======================
+       Services Section
+  ========================== -->
+<section class="fade-in" id="services">
+<h2>השירותים שלנו – מקצה לקצה</h2>
+<div class="services-grid">
+<div class="service-card">
+<div class="service-icon">
+<svg height="50" width="50"><circle cx="25" cy="25" fill="none" r="20" stroke="#00e0ff" stroke-width="2"></circle></svg>
+</div>
+<h3>מיפוי ארנקים</h3>
+<p>ניתוח וקישור כתובות לזיהוי חשודים</p>
+<button class="info-button" onclick="openPopup('מיפוי ארנקים')">למידע נוסף</button>
+</div>
+<div class="service-card">
+<div class="service-icon">
+<svg height="50" width="50"><rect fill="none" height="30" stroke="#00e0ff" stroke-width="2" width="30" x="10" y="10"></rect></svg>
+</div>
+<h3>ניטור התנהגותי</h3>
+<p>מעקב בזמן אמת אחר התנהגות תוקפים</p>
+<button class="info-button" onclick="openPopup('ניטור התנהגותי')">למידע נוסף</button>
+</div>
+<div class="service-card">
+<div class="service-icon">
+<svg height="50" width="50"><polygon fill="none" points="25,5 45,45 5,45" stroke="#00e0ff" stroke-width="2"></polygon></svg>
+</div>
+<h3>קישור כתובות</h3>
+<p>התאמת כתובות לאישורים וזהויות</p>
+<button class="info-button" onclick="openPopup('קישור כתובות')">למידע נוסף</button>
+</div>
+<div class="service-card">
+<div class="service-icon">
+<svg height="50" width="50"><line stroke="#00e0ff" stroke-width="2" x1="5" x2="45" y1="5" y2="45"></line><line stroke="#00e0ff" stroke-width="2" x1="45" x2="5" y1="5" y2="45"></line></svg>
+</div>
+<h3>עבודה מול בורסות</h3>
+<p>תיאום בין בורסות, DEX ושווקים</p>
+<button class="info-button" onclick="openPopup('עבודה מול בורסות')">למידע נוסף</button>
+</div>
+<div class="service-card">
+<div class="service-icon">
+<svg height="50" width="50"><circle cx="25" cy="25" fill="none" r="20" stroke="#00e0ff" stroke-width="2"></circle><line stroke="#00e0ff" stroke-width="2" x1="25" x2="25" y1="5" y2="45"></line></svg>
+</div>
+<h3>SCAM / PHISHING</h3>
+<p>זיהוי תרחישי scam והגנה מפניהם</p>
+<button class="info-button" onclick="openPopup('SCAM / PHISHING')">למידע נוסף</button>
+</div>
+<div class="service-card">
+<div class="service-icon">
+<svg height="50" width="50"><rect fill="none" height="30" stroke="#00e0ff" stroke-width="2" width="30" x="10" y="10"></rect><circle cx="25" cy="25" fill="#00e0ff" r="5"></circle></svg>
+</div>
+<h3>גניבות NFT</h3>
+<p>איתור גניבות Airdrops וניטור NFT</p>
+<button class="info-button" onclick="openPopup('גניבות NFT')">למידע נוסף</button>
+</div>
+</div>
+</section>
+<!-- Modal Popup for Services -->
+<div class="modal" id="service-popup">
+<div class="modal-content">
+<span class="close" onclick="closePopup()">×</span>
+<div id="popup-content">
+<!-- תוכן דינמי ייטען כאן -->
+<p>תוכן מפורט על השירות...</p>
+</div>
+</div>
+</div>
+<!-- =======================
+       How It Works Section
+  ========================== -->
+<section class="fade-in" id="how-it-works">
+<h2>תהליך העבודה</h2>
+<div class="steps-grid">
+<div class="step">
+<div class="step-number">1</div>
+<div class="step-icon">
+<svg height="50" width="50"><rect fill="none" height="30" stroke="#00e0ff" stroke-width="2" width="30" x="10" y="10"></rect></svg>
+</div>
+<h3>פתיחת תיק חקירה</h3>
+<p>תיאור מקרה, ארנקים מעורבים והצגת הוכחות.</p>
+</div>
+<div class="step">
+<div class="step-number">2</div>
+<div class="step-icon">
+<svg height="50" width="50"><circle cx="25" cy="25" fill="none" r="20" stroke="#00e0ff" stroke-width="2"></circle></svg>
+</div>
+<h3>איסוף מודיעין</h3>
+<p>שימוש בכלי AI, אלגוריתמים ו־OSINT לניתוח נתונים.</p>
+</div>
+<div class="step">
+<div class="step-number">3</div>
+<div class="step-icon">
+<svg height="50" width="50"><polygon fill="none" points="25,5 45,45 5,45" stroke="#00e0ff" stroke-width="2"></polygon></svg>
+</div>
+<h3>איתור וקישור</h3>
+<p>מיפוי כתובות, איסוף הקשרים ותיעוד מסלול כספים.</p>
+</div>
+<div class="step">
+<div class="step-number">4</div>
+<div class="step-icon">
+<svg height="50" width="50"><line stroke="#00e0ff" stroke-width="2" x1="5" x2="45" y1="5" y2="45"></line><line stroke="#00e0ff" stroke-width="2" x1="45" x2="5" y1="5" y2="45"></line></svg>
+</div>
+<h3>דו"ח סופי</h3>
+<p>הכנת דו"ח פורנזי ותמיכה משפטית עד לתוצאה הסופית.</p>
+</div>
+</div>
+</section>
+<!-- =======================
+       Case Studies Section
+  ========================== -->
+<section class="fade-in" id="case-studies">
+<h2>סיפורי הצלחה</h2>
+<div class="carousel">
+<div class="case-card">
+<div class="case-image" style="background:none;"><div style="font-size:3em; text-align:center; line-height:150px;">📁</div></div>
+<div class="case-info">
+<p>סכום: 100,000$</p>
+<p>זמן טיפול: 2 שבועות</p>
+<p>מיקום: תל אביב</p>
+<button onclick="openCasePopup('case1')">קראו את הסיפור המלא</button>
+</div>
+</div>
+<div class="case-card">
+<div class="case-image" style="background:none;"><div style="font-size:3em; text-align:center; line-height:150px;">🧾</div></div>
+<div class="case-info">
+<p>סכום: 250,000$</p>
+<p>זמן טיפול: 1 חודש</p>
+<p>מיקום: ירושלים</p>
+<button onclick="openCasePopup('case2')">קראו את הסיפור המלא</button>
+</div>
+</div>
+<!-- ניתן להוסיף עוד קלפים -->
+</div>
+</section>
+<!-- Modal Popup for Case Studies -->
+<div class="modal" id="case-popup">
+<div class="modal-content">
+<span class="close" onclick="closeCasePopup()">×</span>
+<div id="case-popup-content">
+<!-- תוכן דינמי ייטען כאן -->
+<p>ניתוח המקרה בפירוט...</p>
+</div>
+</div>
+</div>
+<!-- =======================
+       Technology Section
+  ========================== -->
+<section class="fade-in" id="technology">
+<h2>הטכנולוגיה שלנו</h2>
+<div class="tech-grid">
+<div class="tech-card">
+<div class="tech-icon">
+<svg height="50" width="50">
+<circle cx="25" cy="25" fill="none" r="20" stroke="#00e0ff" stroke-width="2"></circle>
+</svg>
+</div>
+<h3>GraphSense</h3>
+<p>כלי לניתוח רשתות בלוקצ'יין</p>
+<a href="#">צפה במדריך</a>
+</div>
+<div class="tech-card">
+<div class="tech-icon">
+<svg height="50" width="50">
+<rect fill="none" height="30" stroke="#00e0ff" stroke-width="2" width="30" x="10" y="10"></rect>
+</svg>
+</div>
+<h3>Chainalysis</h3>
+<p>API לניתוח מתקדם</p>
+<a href="#">צפה במדריך</a>
+</div>
+<div class="tech-card">
+<div class="tech-icon">
+<svg height="50" width="50">
+<polygon fill="none" points="25,5 45,45 5,45" stroke="#00e0ff" stroke-width="2"></polygon>
+</svg>
+</div>
+<h3>Blockchain Explorer</h3>
+<p>מערכת לחקירת בלוקצ'יין</p>
+<a href="#">צפה במדריך</a>
+</div>
+<div class="tech-card">
+<div class="tech-icon">
+<svg height="50" width="50">
+<line stroke="#00e0ff" stroke-width="2" x1="5" x2="45" y1="5" y2="45"></line>
+<line stroke="#00e0ff" stroke-width="2" x1="45" x2="5" y1="5" y2="45"></line>
+</svg>
+</div>
+<h3>דיווח בורסות</h3>
+<p>פרוטוקול דיווח אוטומטי</p>
+<a href="#">צפה במדריך</a>
+</div>
+<div class="tech-card">
+<div class="tech-icon">
+<svg height="50" width="50">
+<circle cx="25" cy="25" fill="none" r="20" stroke="#00e0ff" stroke-width="2"></circle>
+<line stroke="#00e0ff" stroke-width="2" x1="25" x2="25" y1="5" y2="45"></line>
+</svg>
+</div>
+<h3>ML Patterns</h3>
+<p>זיהוי תבניות בלמידת מכונה</p>
+<a href="#">צפה במדריך</a>
+</div>
+<div class="tech-card">
+<div class="tech-icon">
+<svg height="50" width="50">
+<rect fill="none" height="30" stroke="#00e0ff" stroke-width="2" width="30" x="10" y="10"></rect>
+</svg>
+</div>
+<h3>Custom Explorer</h3>
+<p>חקירה בהתאמה אישית</p>
+<a href="#">צפה במדריך</a>
+</div>
+</div>
+</section>
+<!-- =======================
+       Partners Section
+  ========================== -->
+<section class="fade-in" id="partners">
+<h2>שותפים ולקוחות</h2>
+<div class="partners-carousel">
+<div class="partner">
+<div style="font-size:2em; text-align:center;" title="סייבר ישראל">🛡️</div>
+<span class="tooltip">סייבר ישראל - שותפים לאבטחה</span>
+</div>
+<div class="partner">
+<div style="font-size:2em; text-align:center;" title="עורכי דין">⚖️</div>
+<span class="tooltip">עורכי דין - ייעוץ משפטי</span>
+</div>
+<div class="partner">
+<div style="font-size:2em; text-align:center;" title="מאגרי מודיעין">📊</div>
+<span class="tooltip">מאגרי מודיעין - שיתוף נתונים</span>
+</div>
+<div class="partner">
+<div style="font-size:2em; text-align:center;" title="בורסות">🏦</div>
+<span class="tooltip">בורסות - שיתוף פעולה עם שווקים</span>
+</div>
+</div>
+</section>
+<!-- =======================
+       FAQ Section
+  ========================== -->
+<section class="fade-in" id="faq">
+<h2>שאלות נפוצות</h2>
+<div class="faq-filter">
+<input id="faq-search" placeholder="חפש שאלה..." type="text"/>
+</div>
+<div class="faq-container">
+<div class="faq-item">
+<div class="faq-question">איך יודעים אם אפשר לאתר את הקריפטו?</div>
+<div class="faq-answer">אנו משתמשים בטכנולוגיות מתקדמות לזיהוי ומיפוי כתובות ברשתות בלוקצ'יין.</div>
+</div>
+<div class="faq-item">
+<div class="faq-question">האם אתם מחוברים למשטרה או למס הכנסה?</div>
+<div class="faq-answer">אנו פועלים בשיתוף פעולה עם גורמי אכיפה וייעוץ משפטי מוביל.</div>
+</div>
+<div class="faq-item">
+<div class="faq-question">כמה זמן נמשך תהליך חקירה?</div>
+<div class="faq-answer">התהליך משתנה בהתאם למורכבות המקרה, אך ממוצע הטיפול נע בין 2 שבועות לחודש.</div>
+</div>
+<div class="faq-item">
+<div class="faq-question">האם אני מקבל דו"ח?</div>
+<div class="faq-answer">כן, עם סיום החקירה תקבלו דו"ח מפורט הכולל את ממצאי הדיון.</div>
+</div>
+<div class="faq-item">
+<div class="faq-question">כמה זה עולה?</div>
+<div class="faq-answer">עלויות משתנות בהתאם להיקף וטיב השירות – ניתן לקבל ייעוץ ראשוני ללא עלות.</div>
+</div>
+</div>
+</section>
+<!-- =======================
+       Case Form Section
+  ========================== -->
+<section class="fade-in" id="case-form">
 <h2>פתיחת תיק</h2>
 <form id="contact-form" style="max-width:600px;margin:auto;background:#2c2c2c;padding:20px;border-radius:12px;box-shadow:0 0 20px rgba(0,0,0,0.1);color:#fff;">
 <label style="color:#ffffff;font-weight:bold;display:block;margin-bottom:5px;">Full Name</label>
@@ -45,5 +959,54 @@ document.getElementById("contact-form").addEventListener("submit", function(e) {
 });
 </script>
 </section>
+<!-- =======================
+       JavaScript Interactivity
+  ========================== -->
+<script>
+    // Modal functions for Services
+    function openPopup(serviceId) {
+      document.getElementById("service-popup").style.display = "block";
+      document.getElementById("popup-content").innerHTML = "<h3>מידע נוסף עבור " + serviceId + "</h3><p>תוכן מפורט על השירות ואפשרויות נוספות.</p>";
+    }
+    function closePopup() {
+      document.getElementById("service-popup").style.display = "none";
+    }
+    // Modal functions for Case Studies
+    function openCasePopup(caseId) {
+      document.getElementById("case-popup").style.display = "block";
+      document.getElementById("case-popup-content").innerHTML = "<h3>סיפור המקרה - " + caseId + "</h3><p>ניתוח המקרה בפירוט כולל גרפים ותמונות להמחשה.</p>";
+    }
+    function closeCasePopup() {
+      document.getElementById("case-popup").style.display = "none";
+    }
+    // FAQ Accordion functionality
+    document.querySelectorAll('.faq-question').forEach(item => {
+      item.addEventListener('click', () => {
+        item.parentElement.classList.toggle('open');
+      });
+    });
+    // FAQ Filter functionality
+    document.getElementById("faq-search").addEventListener("input", function() {
+      let filter = this.value.toLowerCase();
+      document.querySelectorAll('.faq-item').forEach(item => {
+        let text = item.textContent.toLowerCase();
+        if (text.indexOf(filter) > -1) {
+          item.style.display = "";
+        } else {
+          item.style.display = "none";
+        }
+      });
+    });
+    // Form submission simulation
+    document.getElementById("open-case-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      // ניתן להוסיף אנימציה של שליחה כאן
+      this.style.display = "none";
+      document.getElementById("form-thankyou").classList.remove("hidden");
+    });
+  </script>
+<footer style="background:#000; color:#aaa; text-align:center; padding:1rem; font-size:0.9em; margin-top:60px; border-top:1px solid #00e0ff;">
+<p>© 2025 CRYPTONO - כל הזכויות שמורות | עיצוב ופיתוח בעזרת AI</p>
+</footer>
 </body>
 </html>
