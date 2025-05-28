@@ -924,7 +924,7 @@ section:not(#hero) {
   ========================== -->
 <section class="fade-in" id="case-form">
 <h2>פתיחת תיק</h2>
-<form action="https://docs.google.com/forms/d/e/1FAIpQLSeGATL-0AcGUFH7hYddIWjbkhSXVDbxj-126KxmsNvM5riPWg/formResponse" method="POST" onsubmit="formSubmitted=true;" style="max-width:600px;margin:auto;background:#2c2c2c;padding:20px;border-radius:12px;box-shadow:0 0 20px rgba(0,0,0,0.1);" target="hidden_iframe">
+<form id="contact-form" style="max-width:600px;margin:auto;background:#2c2c2c;padding:20px;border-radius:12px;box-shadow:0 0 20px rgba(0,0,0,0.1);color:#fff;">
 <label style="color:#ffffff;font-weight:bold;display:block;margin-bottom:5px;">Full Name</label>
 <input name="entry.940027313" required="" style="width:100%;padding:10px;margin-bottom:15px;border-radius:8px;border:1px solid #ccc;" type="text"/>
 <label style="color:#ffffff;font-weight:bold;display:block;margin-bottom:5px;">E-mail</label>
@@ -936,18 +936,27 @@ section:not(#hero) {
 <label style="color:#ffffff;font-weight:bold;display:block;margin-bottom:5px;">Case Details / Additional Information</label>
 <textarea name="entry.2012789313" rows="5" style="width:100%;padding:10px;margin-bottom:20px;border-radius:8px;border:1px solid #ccc;"></textarea>
 <button style="background:#0a58ca;color:#fff;border:none;padding:12px 25px;border-radius:8px;cursor:pointer;" type="submit">שליחה</button>
-<iframe name="hidden_iframe" onload="displaySuccessMessage()" style="display:none;"></iframe>
 </form>
 <div id="form-success-message" style="display:none;text-align:center;background:#d4edda;color:#155724;padding:15px;border-radius:8px;margin-top:20px;font-weight:bold;">
   תודה! פנייתך התקבלה בהצלחה ואנו נטפל בה בהקדם.
 </div>
 <script>
-  var formSubmitted = false;
-  function displaySuccessMessage() {
-    if (formSubmitted) {
-      document.getElementById('form-success-message').style.display = 'block';
-    }
-  }
+document.getElementById("contact-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+  fetch("https://docs.google.com/forms/d/e/1FAIpQLSeGATL-0AcGUFH7hYddIWjbkhSXVDbxj-126KxmsNvM5riPWg/formResponse", {
+    method: "POST",
+    mode: "no-cors",
+    body: data
+  }).then(() => {
+    document.getElementById("form-success-message").style.display = "block";
+    form.reset();
+  }).catch((error) => {
+    alert("אירעה שגיאה בשליחת הטופס. אנא נסה שוב.");
+    console.error("Form submission error:", error);
+  });
+});
 </script>
 </section>
 <!-- =======================
