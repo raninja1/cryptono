@@ -922,42 +922,44 @@ section:not(#hero) {
 <!-- =======================
        Case Form Section
   ========================== -->
-<section class="fade-in" id="case-form">
-<h2>פתיחת תיק</h2>
-<form id="contact-form" style="max-width:600px;margin:auto;background:#2c2c2c;padding:20px;border-radius:12px;box-shadow:0 0 20px rgba(0,0,0,0.1);color:#fff;">
-<label style="color:#ffffff;font-weight:bold;display:block;margin-bottom:5px;">Full Name</label>
-<input name="entry.1894898211" required="" style="width:100%;padding:10px;margin-bottom:15px;border-radius:8px;border:1px solid #ccc;" type="text"/>
-<label style="color:#ffffff;font-weight:bold;display:block;margin-bottom:5px;">E-mail</label>
-<input name="entry.1036996863" required="" style="width:100%;padding:10px;margin-bottom:15px;border-radius:8px;border:1px solid #ccc;" type="email"/>
-<label style="color:#ffffff;font-weight:bold;display:block;margin-bottom:5px;">Phone Number</label>
-<input name="entry.1988770729" style="width:100%;padding:10px;margin-bottom:15px;border-radius:8px;border:1px solid #ccc;" type="tel"/>
-<label style="color:#ffffff;font-weight:bold;display:block;margin-bottom:5px;">Wallet Address</label>
-<input name="entry.1980922864" style="width:100%;padding:10px;margin-bottom:15px;border-radius:8px;border:1px solid #ccc;" type="text"/>
-<label style="color:#ffffff;font-weight:bold;display:block;margin-bottom:5px;">Case Details / Additional Information</label>
-<textarea name="entry.401220733" rows="5" style="width:100%;padding:10px;margin-bottom:20px;border-radius:8px;border:1px solid #ccc;"></textarea>
-<button style="background:#0a58ca;color:#fff;border:none;padding:12px 25px;border-radius:8px;cursor:pointer;" type="submit">שליחה</button>
+<section id="contact" style="background-color: #1e1e1e; padding: 4em 2em; color: white;">
+<div style="max-width: 700px; margin: auto;">
+<h2 style="text-align: center; font-size: 2em; margin-bottom: 1em;">פתיחת תיק חקירה</h2>
+<form id="crypto-form" style="background: #2b2b2b; padding: 2em; border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.3);">
+<label style="display: block; margin-bottom: 6px;">Full Name</label>
+<input name="entry.518571143" required="" style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 6px; border: none; font-size: 1rem;" type="text"/>
+<label style="display: block; margin-bottom: 6px;">E-mail</label>
+<input name="entry.1246645147" required="" style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 6px; border: none; font-size: 1rem;" type="email"/>
+<label style="display: block; margin-bottom: 6px;">Phone Number</label>
+<input name="entry.1405859902" style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 6px; border: none; font-size: 1rem;" type="tel"/>
+<label style="display: block; margin-bottom: 6px;">Wallet Address</label>
+<input name="entry.2111394124" style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 6px; border: none; font-size: 1rem;" type="text"/>
+<label style="display: block; margin-bottom: 6px;">Case Details / Additional Information</label>
+<textarea name="entry.138729086" rows="5" style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 6px; border: none; font-size: 1rem;"></textarea>
+<button style="background-color: #4CAF50; color: white; padding: 12px 25px; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem;" type="submit">שלח</button>
 </form>
-<div id="form-success-message" style="display:none;text-align:center;background:#d4edda;color:#155724;padding:15px;border-radius:8px;margin-top:20px;font-weight:bold;">
-  תודה! פנייתך התקבלה בהצלחה ואנו נטפל בה בהקדם.
+<div id="form-success-message" style="display: none; margin-top: 20px; background: #28a745; color: white; padding: 15px; text-align: center; border-radius: 8px;">
+      תודה! פנייתך נשלחה בהצלחה.
+    </div>
 </div>
 <script>
-document.getElementById("contact-form").addEventListener("submit", function(e) {
-  e.preventDefault();
-  const form = e.target;
-  const data = new FormData(form);
-  fetch("https://docs.google.com/forms/d/e/1FAIpQLSeGATL-0AcGUFH7hYddIWjbkhSXVDbxj-126KxmsNvM5riPWg/formResponse", {
-    method: "POST",
-    mode: "no-cors",
-    body: data
-  }).then(() => {
-    document.getElementById("form-success-message").style.display = "block";
-    form.reset();
-  }).catch((error) => {
-    alert("אירעה שגיאה בשליחת הטופס. אנא נסה שוב.");
-    console.error("Form submission error:", error);
-  });
-});
-</script>
+    document.getElementById("crypto-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
+      fetch("https://docs.google.com/forms/d/e/1FAIpQLSfDscS_egf-q0W4pYCwIC0erIsq2sU7x9fONsiyg10Yu2ljvg/formResponse", {
+        method: "POST",
+        mode: "no-cors",
+        body: data
+      }).then(() => {
+        document.getElementById("form-success-message").style.display = "block";
+        form.reset();
+      }).catch((error) => {
+        alert("אירעה שגיאה בשליחה");
+        console.error("Error:", error);
+      });
+    });
+  </script>
 </section>
 <!-- =======================
        JavaScript Interactivity
