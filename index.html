@@ -1,11 +1,12 @@
 
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+
+<html dir="rtl" lang="he">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CRYPTONO Header</title>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CRYPTONO Header</title>
+<style>
     body {
       margin: 0;
       background-color: #000;
@@ -37,33 +38,83 @@
     .highlight:hover {
       background-color: rgba(0, 224, 255, 0.25);
     }
-  </style>
+  
+body {
+    background: url('https://res.cloudinary.com/dreoq0pxm/image/upload/v1748557522/7db8882bd-2773-4990-8858-31605c5bef55%D7%9Cef71_tyykos.png') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+section, header, footer, .footer, #contact {
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+@media (min-width: 768px) {
+  .services-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 25px !important;
+  }
+}
+
+body {
+    background: url('https://res.cloudinary.com/dreoq0pxm/image/upload/v1748557522/7db8882bd-2773-4990-8858-31605c5bef55%D7%9Cef71_tyykos.png') no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: fixed;
+    background-blend-mode: lighten;
+}
+</style>
 </head>
-<body>
-  <header style="background:#000; padding:1rem 2rem; position:sticky; top:0; z-index:1000; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #00e0ff; direction: rtl; backdrop-filter: blur(4px);">
-    <div class="logo" style="font-weight:bold; font-size:1.6em; color:#00e0ff; letter-spacing:1px;">CRYPTONO.ai</div>
-    <nav style="display:flex; gap:0.5rem;">
-      <a href="#crypto-scam-alert" class="nav-btn">בית</a>
-      <a href="#what-we-do" class="nav-btn">מה אנחנו עושים</a>
-      <a href="#services" class="nav-btn">שירותים</a>
-      <a href="#how-it-works" class="nav-btn">תהליך</a>
-      <a href="#case-studies" class="nav-btn">הצלחות</a>
-      <a href="#technology" class="nav-btn">טכנולוגיה</a>
-      <a href="#faq" class="nav-btn">שאלות</a>
-      <a href="#case-form" class="nav-btn highlight">פתח תיק</a>
-    </nav>
-  </header>
+<body style="background: url('https://i.postimg.cc/3NQbVBmZ/7db8882bd-2773-4990-8858-31605c5bef55-ef71.png') center center / cover no-repeat fixed">
+<header id="header" style="background:#000; padding:1rem 2rem; position:sticky; top:0; z-index:1000; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #00e0ff; direction: rtl; backdrop-filter: blur(4px);">
+<div class="logo" style="font-weight:bold; font-size:1.6em; color:#00e0ff; letter-spacing:1px;">CRYPTONO.ai</div>
+<nav style="display:flex; gap:0.5rem;">
+<a class="nav-btn" href="#header">בית</a>
+<a class="nav-btn" href="#what-we-do">מה אנחנו עושים</a>
+<a class="nav-btn" href="#services">שירותים</a>
+<a class="nav-btn" href="#how-it-works">תהליך</a>
+<a class="nav-btn" href="#statistics">הצלחות</a>
+<a class="nav-btn" href="#technology">טכנולוגיה</a>
+<a class="nav-btn" href="#faq">שאלות</a>
+<a class="nav-btn highlight" href="#contact">פתח תיק</a>
+</nav>
+</header>
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+<script>
+document.querySelectorAll('a[href="#statistics"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const element = document.getElementById("statistics");
+    const yOffset = -80; 
+    const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({top: y, behavior: 'smooth'});
+  });
+});
+</script>
 </body>
 </html>
-
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+
+<html dir="rtl" lang="he">
 <head>
-  <meta charset="UTF-8">
-  <title>Cryptono.AI</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700&display=swap" rel="stylesheet">
-  <style>
+<meta charset="utf-8"/>
+<title>Cryptono.AI</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<style>
     body {
       background-color: #000;
       color: #eee;
@@ -113,24 +164,23 @@
   </style>
 </head>
 <body>
-  <section>
-    <h1>Cryptono.AI</h1>
-    <p>
-      מעקב אחר מטבעות קריפטו<br>
+<section>
+<h1>Cryptono.AI</h1>
+<p>
+      מעקב אחר מטבעות קריפטו<br/>
       חקירות בלוקצ'יין, גשרים וארנקים
     </p>
-    <a class="cta-button" href="#services">למד/י עוד</a>
-  </section>
+<a class="cta-button" href="#what-we-do">למד/י עוד</a>
+</section>
 </body>
 </html>
-
-
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+
+<html dir="rtl" lang="he">
 <head>
-  <meta charset="UTF-8">
-  <title>וידג'ט מחירי קריפטו</title>
-  <style>
+<meta charset="utf-8"/>
+<title>וידג'ט מחירי קריפטו</title>
+<style>
     body {
       margin: 0;
       font-family: 'Heebo', sans-serif;
@@ -183,13 +233,21 @@
   </style>
 </head>
 <body>
-
 <div class="crypto-ticker">
-  <div class="crypto-content" id="cryptoTicker">
+<div class="crypto-content" id="cryptoTicker">
+    טוען מחירים...
+  
+    טוען מחירים...
+  
+    טוען מחירים...
+  
+    טוען מחירים...
+  
+    טוען מחירים...
+  
     טוען מחירים...
   </div>
 </div>
-
 <script>
 const coins = {
   bitcoin: { symbol: "BTC", icon: "https://assets.coingecko.com/coins/images/1/small/bitcoin.png" },
@@ -228,18 +286,16 @@ async function updatePrices() {
 updatePrices();
 setInterval(updatePrices, 60000);
 </script>
-
 </body>
 </html>
-
-
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+
+<html dir="rtl" lang="he">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>אודות - Cryptono</title>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>אודות - Cryptono</title>
+<style>
     body {
       background-color: #000;
       color: #fff;
@@ -275,37 +331,34 @@ setInterval(updatePrices, 60000);
   </style>
 </head>
 <body>
-  <section class="fade-in" id="what-we-do">
-    <h2>אודות</h2>
-    <div class="container">
-      <p><strong>מובילי תחום האיתור הפלילי בעולם הקריפטו</strong></p>
-      <hr style="border: none; height: 0.3px; background-color: #ff4d4d; width: 320px; margin: 2px auto;">
-      <p><strong>
+<section class="fade-in" id="what-we-do">
+<h2>אודות</h2>
+<div class="container">
+<p><strong>מובילי תחום האיתור הפלילי בעולם הקריפטו</strong></p>
+<hr style="border: none; height: 0.3px; background-color: #ff4d4d; width: 320px; margin: 2px auto;"/>
+<p><strong>
       ב־Cryptono אנו מפתחים פתרונות טכנולוגיים ייחודיים לאיתור ומעקב אחר עסקאות חשודות על גבי כל רשת בלוקצ'יין. הצוותים שלנו מתמחים בניתוח פעילות פיננסית הקשורה לעבירות מקוונות, תוך שימוש בשיטות פיענוח מתקדמות לזיהוי תבניות מרמה, הונאה וגניבה. המערכות שלנו נמצאות בשימוש שוטף על ידי בנקים, פלטפורמות מסחר, גופי פינטק ורשויות רגולציה לבחינת רמות סיכון בעסקאות מבוססות מטבעות דיגיטליים. לאורך השנים, סייענו לגופי אכיפה בינלאומיים באיתור עברייני קריפטו, בהובלת חקירות ובהשבת נכסים גנובים לבעליהם החוקיים — בהיקפים של מיליוני דולרים.</strong></p>
-
-      <p style="text-align: center;">בנוסף, אנו מבצעים ביקורות עבור חברות השקעה וארגונים פיננסיים, הכוללות בין השאר:</p>
-
-      <div class="cloud-box">
-        <ul>
-          <li>אימות החזקה וניהול של נכסי קריפטו מוצהרים</li>
-          <li>הערכת שווי ומקורות מימון</li>
-          <li>איתור חריגות או פעילות חשודה מצד חברות מסחר או משקיעים</li>
-        </ul>
-      </div>
-
-      <p style="text-align: center;">ב־Cryptono אנו מחויבים לשקיפות, אמינות ודיוק חקירתי — ומובילים גישה חדשנית בשירות לקוחות פרטיים, מוסדות ורגולטורים כאחד.</p>
-    </div>
-  </section>
+<p style="text-align: center;">בנוסף, אנו מבצעים ביקורות עבור חברות השקעה וארגונים פיננסיים, הכוללות בין השאר:</p>
+<div class="cloud-box">
+<ul>
+<li>אימות החזקה וניהול של נכסי קריפטו מוצהרים</li>
+<li>הערכת שווי ומקורות מימון</li>
+<li>איתור חריגות או פעילות חשודה מצד חברות מסחר או משקיעים</li>
+</ul>
+</div>
+<p style="text-align: center;">ב־Cryptono אנו מחויבים לשקיפות, אמינות ודיוק חקירתי — ומובילים גישה חדשנית בשירות לקוחות פרטיים, מוסדות ורגולטורים כאחד.</p>
+</div>
+</section>
 </body>
 </html>
-
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+
+<html dir="rtl" lang="he">
 <head>
-  <meta charset="UTF-8">
-  <title>השירותים שלנו – הגנה מקצה לקצה</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
+<meta charset="utf-8"/>
+<title>השירותים שלנו – הגנה מקצה לקצה</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<style>
     body {
       background-color: #000;
       color: #fff;
@@ -394,7 +447,7 @@ setInterval(updatePrices, 60000);
       font-weight: bold;
     }
   </style>
-  <script>
+<script>
     function openPopup(topic) {
       document.querySelectorAll('.popup').forEach(p => p.style.display = 'none');
       const popup = document.getElementById('popup-' + topic);
@@ -415,82 +468,78 @@ setInterval(updatePrices, 60000);
   </script>
 </head>
 <body>
-  <section id="services">
-    <h2>השירותים שלנו – הגנה מקצה לקצה</h2>
-    <div class="services-grid">
-      <div class="service-card"><h3>מיפוי ארנקים</h3><button class="info-button" onclick="openPopup('wallets')">למידע נוסף</button></div>
-      <div class="service-card"><h3>ניטור התנהגותי</h3><button class="info-button" onclick="openPopup('behavior')">למידע נוסף</button></div>
-      <div class="service-card"><h3>מעקב וניתוח בלוקים</h3><button class="info-button" onclick="openPopup('blocks')">למידע נוסף</button></div>
-      <div class="service-card"><h3>עבודה מול בורסות</h3><button class="info-button" onclick="openPopup('exchanges')">למידע נוסף</button></div>
-      <div class="service-card"><h3>מניעת הלבנת הון (AML)</h3><button class="info-button" onclick="openPopup('aml')">למידע נוסף</button></div>
-      <div class="service-card"><h3>SCAM / PHISHING</h3><button class="info-button" onclick="openPopup('scam')">למידע נוסף</button></div>
-    </div>
-
-    <div class="popup" id="popup-wallets"><h3>מיפוי ארנקים</h3><p>ניתוח וקישור כתובות לזיהוי חשודים.</p><button class="close-btn" onclick="closePopup('wallets')">סגור</button></div>
-    <div class="popup" id="popup-behavior"><h3>ניטור התנהגותי</h3><p>מעקב בזמן אמת אחר פעילות חשודה של תוקפים.</p><button class="close-btn" onclick="closePopup('behavior')">סגור</button></div>
-    <div class="popup" id="popup-blocks"><h3>מעקב וניתוח בלוקים</h3><p>בדיקת פעילות עסקאות, חוזים ונתוני שימוש בבלוקצ'יין.</p><button class="close-btn" onclick="closePopup('blocks')">סגור</button></div>
-    <div class="popup" id="popup-exchanges"><h3>עבודה מול בורסות</h3><p>תיאום עם בורסות, שווקים ו־DEX לאיתור ומניעה.</p><button class="close-btn" onclick="closePopup('exchanges')">סגור</button></div>
-    <div class="popup" id="popup-aml"><h3>מניעת הלבנת הון (AML)</h3><p>הלבנת הון היא תהליך שבו מומר כסף שהושג בדרכים בלתי חוקיות לכסף חוקי לכאורה. גם אם החברה שלך פועלת לפי הכללים, אין זה אומר ששותפיך העסקיים מצייתים לאותם תקני AML.</p><button class="close-btn" onclick="closePopup('aml')">סגור</button></div>
-    <div class="popup" id="popup-scam"><h3>SCAM / PHISHING</h3><p>זיהוי תרחישי הונאה כמו פישינג, טוקנים מזויפים ופעולות רמאות אחרות ברשת.</p><button class="close-btn" onclick="closePopup('scam')">סגור</button></div>
-  </section>
+<section id="services">
+<h2>השירותים שלנו – הגנה מקצה לקצה</h2>
+<div class="services-grid">
+<div class="service-card"><h3>מיפוי ארנקים</h3><button class="info-button" onclick="openPopup('wallets')">למידע נוסף</button></div>
+<div class="service-card"><h3>ניטור התנהגותי</h3><button class="info-button" onclick="openPopup('behavior')">למידע נוסף</button></div>
+<div class="service-card"><h3>מעקב וניתוח בלוקים</h3><button class="info-button" onclick="openPopup('blocks')">למידע נוסף</button></div>
+<div class="service-card"><h3>עבודה מול בורסות</h3><button class="info-button" onclick="openPopup('exchanges')">למידע נוסף</button></div>
+<div class="service-card"><h3>מניעת הלבנת הון (AML)</h3><button class="info-button" onclick="openPopup('aml')">למידע נוסף</button></div>
+<div class="service-card"><h3>SCAM / PHISHING</h3><button class="info-button" onclick="openPopup('scam')">למידע נוסף</button></div>
+</div>
+<div class="popup" id="popup-wallets"><h3>מיפוי ארנקים</h3><p>ניתוח וקישור כתובות לזיהוי חשודים.</p><button class="close-btn" onclick="closePopup('wallets')">סגור</button></div>
+<div class="popup" id="popup-behavior"><h3>ניטור התנהגותי</h3><p>מעקב בזמן אמת אחר פעילות חשודה של תוקפים.</p><button class="close-btn" onclick="closePopup('behavior')">סגור</button></div>
+<div class="popup" id="popup-blocks"><h3>מעקב וניתוח בלוקים</h3><p>בדיקת פעילות עסקאות, חוזים ונתוני שימוש בבלוקצ'יין.</p><button class="close-btn" onclick="closePopup('blocks')">סגור</button></div>
+<div class="popup" id="popup-exchanges"><h3>עבודה מול בורסות</h3><p>תיאום עם בורסות, שווקים ו־DEX לאיתור ומניעה.</p><button class="close-btn" onclick="closePopup('exchanges')">סגור</button></div>
+<div class="popup" id="popup-aml"><h3>מניעת הלבנת הון (AML)</h3><p>הלבנת הון היא תהליך שבו מומר כסף שהושג בדרכים בלתי חוקיות לכסף חוקי לכאורה. גם אם החברה שלך פועלת לפי הכללים, אין זה אומר ששותפיך העסקיים מצייתים לאותם תקני AML.</p><button class="close-btn" onclick="closePopup('aml')">סגור</button></div>
+<div class="popup" id="popup-scam"><h3>SCAM / PHISHING</h3><p>זיהוי תרחישי הונאה כמו פישינג, טוקנים מזויפים ופעולות רמאות אחרות ברשת.</p><button class="close-btn" onclick="closePopup('scam')">סגור</button></div>
+</section>
 </body>
 </html>
-
-
 <section class="process-flow" id="how-it-works">
-  <h2>תהליך</h2>
-  <hr class="divider" />
-  <div class="underline"></div>
-  <div class="timeline">
-    <div class="timeline-step with-image">
-      <div class="circle">1</div>
-      <div class="content">
-        <h3>פתיחת תיק חקירה</h3>
-        <p>תיאור מקרה, ארנקים מעורבים והצגת הוכחות.</p>
-      </div>
-      <div class="step-image equal-height">
-        <img src="https://res.cloudinary.com/dreoq0pxm/image/upload/v1748542065/NETC_ul0igc.png" alt="פתיחת תיק חקירה" />
-      </div>
-    </div>
-    <div class="line"></div>
-    <div class="timeline-line-decor"></div>
-    <div class="timeline-step with-image">
-      <div class="circle">2</div>
-      <div class="content">
-        <h3>איסוף מודיעין</h3>
-        <p>שימוש בכלי AI, אלגוריתמים ו־OSINT לניתוח נתונים.</p>
-      </div>
-      <div class="step-image equal-height">
-        <img src="https://res.cloudinary.com/dreoq0pxm/image/upload/v1748541233/OSINTc_ypqrig.png" alt="איסוף מודיעין" />
-      </div>
-    </div>
-    <div class="line"></div>
-    <div class="timeline-line-decor"></div>
-    <div class="timeline-step with-image">
-      <div class="circle">3</div>
-      <div class="content">
-        <h3>איתור וקישור</h3>
-        <p>מיפוי כתובות, איסוף הקשרים ותיעוד מסלול כספים.</p>
-      </div>
-      <div class="step-image equal-height">
-        <img src="https://res.cloudinary.com/dreoq0pxm/image/upload/v1748540724/OSINTF_vcmd5p.png" alt="OSINT תהליך" />
-      </div>
-    </div>
-    <div class="line"></div>
-    <div class="timeline-line-decor"></div>
-    <div class="timeline-step with-image">
-      <div class="circle">4</div>
-      <div class="content">
-        <h3>דו"ח סופי</h3>
-        <p>הכנת דו"ח פורנזי ותמיכה משפטית עד לתוצאה הסופית.</p>
-      </div>
-      <div class="step-image equal-height">
-        <img src="https://res.cloudinary.com/dreoq0pxm/image/upload/v1748539532/cryptoflowreph_hnk5wz.png" alt="דו"ח סופי" />
-      </div>
-    </div>
-  </div>
+<h2>תהליך</h2>
+<hr class="divider"/>
+<div class="underline"></div>
+<div class="timeline">
+<div class="timeline-step with-image">
+<div class="circle">1</div>
+<div class="content">
+<h3>פתיחת תיק חקירה</h3>
+<p>תיאור מקרה, ארנקים מעורבים והצגת הוכחות.</p>
+</div>
+<div class="step-image equal-height">
+<img alt="פתיחת תיק חקירה" src="https://res.cloudinary.com/dreoq0pxm/image/upload/v1748542065/NETC_ul0igc.png"/>
+</div>
+</div>
+<div class="line"></div>
+<div class="timeline-line-decor"></div>
+<div class="timeline-step with-image">
+<div class="circle">2</div>
+<div class="content">
+<h3>איסוף מודיעין</h3>
+<p>שימוש בכלי AI, אלגוריתמים ו־OSINT לניתוח נתונים.</p>
+</div>
+<div class="step-image equal-height">
+<img alt="איסוף מודיעין" src="https://res.cloudinary.com/dreoq0pxm/image/upload/v1748541233/OSINTc_ypqrig.png"/>
+</div>
+</div>
+<div class="line"></div>
+<div class="timeline-line-decor"></div>
+<div class="timeline-step with-image">
+<div class="circle">3</div>
+<div class="content">
+<h3>איתור וקישור</h3>
+<p>מיפוי כתובות, איסוף הקשרים ותיעוד מסלול כספים.</p>
+</div>
+<div class="step-image equal-height">
+<img alt="OSINT תהליך" src="https://res.cloudinary.com/dreoq0pxm/image/upload/v1748540724/OSINTF_vcmd5p.png"/>
+</div>
+</div>
+<div class="line"></div>
+<div class="timeline-line-decor"></div>
+<div class="timeline-step with-image">
+<div class="circle">4</div>
+<div class="content">
+<h3>דו"ח סופי</h3>
+<p>הכנת דו"ח פורנזי ותמיכה משפטית עד לתוצאה הסופית.</p>
+</div>
+<div class="step-image equal-height">
+<img alt="דו" src="https://res.cloudinary.com/dreoq0pxm/image/upload/v1748539532/cryptoflowreph_hnk5wz.png" ח="" סופי"=""/>
+</div>
+</div>
+</div>
 </section>
-
 <style>
   body {
     background-color: #000;
@@ -595,14 +644,14 @@ setInterval(updatePrices, 60000);
     }
   }
 </style>
-
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+
+<html dir="rtl" lang="he">
 <head>
-  <meta charset="UTF-8">
-  <title>סטטיסטיקות הצלחה</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
+<meta charset="utf-8"/>
+<title>סטטיסטיקות הצלחה</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<style>
     body {
       background-color: #000;
       font-family: 'Arial', sans-serif;
@@ -664,37 +713,35 @@ setInterval(updatePrices, 60000);
   </style>
 </head>
 <body>
-
-<section>
-  <h2>המספרים מדברים בעד עצמם</h2>
-  <div class="circle-grid">
-    <div class="circle">
-      <span data-target="500">0</span>
-      <p>חוקרים אנושיים ודיגיטליים שפועלים ברחבי העולם</p>
-    </div>
-    <div class="circle">
-      <span data-target="15000">0</span>
-      <p>לקוחות מרוצים</p>
-    </div>
-    <div class="circle">
-      <span data-target="300">0</span>
-      <p>תיקים פעילים כיום</p>
-    </div>
-    <div class="circle">
-      <span data-target="74">0</span>
-      <p>שיעור הצלחה בשנת 2024</p>
-    </div>
-    <div class="circle">
-      <span data-target="0">0</span>
-      <p>דיווח בחינם</p>
-    </div>
-    <div class="circle">
-      <span data-target="24">0</span>
-      <p>תמיכה בכל שעות היממה, שבעה ימים בשבוע</p>
-    </div>
-  </div>
+<section id="statistics">
+<h2>המספרים מדברים בעד עצמם</h2>
+<div class="circle-grid">
+<div class="circle">
+<span data-target="500">0</span>
+<p>חוקרים אנושיים ודיגיטליים שפועלים ברחבי העולם</p>
+</div>
+<div class="circle">
+<span data-target="15000">0</span>
+<p>לקוחות מרוצים</p>
+</div>
+<div class="circle">
+<span data-target="300">0</span>
+<p>תיקים פעילים כיום</p>
+</div>
+<div class="circle">
+<span data-target="74">0</span>
+<p>שיעור הצלחה בשנת 2024</p>
+</div>
+<div class="circle">
+<span data-target="0">0</span>
+<p>דיווח בחינם</p>
+</div>
+<div class="circle">
+<span data-target="24">0</span>
+<p>תמיכה בכל שעות היממה, שבעה ימים בשבוע</p>
+</div>
+</div>
 </section>
-
 <script>
   const counters = document.querySelectorAll('.circle span');
   counters.forEach(counter => {
@@ -715,17 +762,15 @@ setInterval(updatePrices, 60000);
     update();
   });
 </script>
-
 </body>
 </html>
-
-
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+
+<html dir="rtl" lang="he">
 <head>
-  <meta charset="UTF-8">
-  <title>הטכנולוגיה שלנו</title>
-  <style>
+<meta charset="utf-8"/>
+<title>הטכנולוגיה שלנו</title>
+<style>
     body {
       background-color: #000;
       color: white;
@@ -851,64 +896,56 @@ setInterval(updatePrices, 60000);
   </style>
 </head>
 <body>
-
 <section class="fade-in" id="technology">
-  <h2>הטכנולוגיה שלנו</h2>
-  <div class="tech-grid">
-    <div class="tech-card" onclick="openPopup(0)">
-      <div class="tech-icon">🔗</div>
-      <h3>GraphSense</h3>
-      <p>כלי לניתוח רשתות בלוקצ'יין</p>
-      <a>מידע נוסף</a>
-    </div>
-
-    <div class="tech-card" onclick="openPopup(1)">
-      <div class="tech-icon">📊</div>
-      <h3>Chainalysis</h3>
-      <p>API לניתוח מתקדם</p>
-      <a>מידע נוסף</a>
-    </div>
-
-    <div class="tech-card" onclick="openPopup(2)">
-      <div class="tech-icon">🕵️‍♂️</div>
-      <h3>Blockchain Explorer</h3>
-      <p>מערכת לחקירת בלוקצ'יין</p>
-      <a>מידע נוסף</a>
-    </div>
-
-    <div class="tech-card" onclick="openPopup(3)">
-      <div class="tech-icon">📡</div>
-      <h3>דיווח בורסות</h3>
-      <p>פרוטוקול דיווח אוטומטי</p>
-      <a>מידע נוסף</a>
-    </div>
-
-    <div class="tech-card" onclick="openPopup(4)">
-      <div class="tech-icon"><span class="ai-icon">AI</span></div>
-      <h3>ML Patterns</h3>
-      <p>זיהוי תבניות בלמידת מכונה</p>
-      <a>מידע נוסף</a>
-    </div>
-
-    <div class="tech-card" onclick="openPopup(5)">
-      <div class="tech-icon">🧪</div>
-      <h3>Custom Explorer</h3>
-      <p>חקירה בהתאמה אישית</p>
-      <a>מידע נוסף</a>
-    </div>
-  </div>
+<h2>הטכנולוגיה שלנו</h2>
+<div class="tech-grid">
+<div class="tech-card" onclick="openPopup(0)">
+<div class="tech-icon">🔗</div>
+<h3>GraphSense</h3>
+<p>כלי לניתוח רשתות בלוקצ'יין</p>
+<a>מידע נוסף</a>
+</div>
+<div class="tech-card" onclick="openPopup(1)">
+<div class="tech-icon">📊</div>
+<h3>Chainalysis</h3>
+<p>API לניתוח מתקדם</p>
+<a>מידע נוסף</a>
+</div>
+<div class="tech-card" onclick="openPopup(2)">
+<div class="tech-icon">🕵️‍♂️</div>
+<h3>Blockchain Explorer</h3>
+<p>מערכת לחקירת בלוקצ'יין</p>
+<a>מידע נוסף</a>
+</div>
+<div class="tech-card" onclick="openPopup(3)">
+<div class="tech-icon">📡</div>
+<h3>דיווח בורסות</h3>
+<p>פרוטוקול דיווח אוטומטי</p>
+<a>מידע נוסף</a>
+</div>
+<div class="tech-card" onclick="openPopup(4)">
+<div class="tech-icon"><span class="ai-icon">AI</span></div>
+<h3>ML Patterns</h3>
+<p>זיהוי תבניות בלמידת מכונה</p>
+<a>מידע נוסף</a>
+</div>
+<div class="tech-card" onclick="openPopup(5)">
+<div class="tech-icon">🧪</div>
+<h3>Custom Explorer</h3>
+<p>חקירה בהתאמה אישית</p>
+<a>מידע נוסף</a>
+</div>
+</div>
 </section>
-
 <!-- פופאפ -->
 <div class="popup-overlay" id="popup-overlay" onclick="closePopup()">
-  <div class="popup" onclick="event.stopPropagation()">
-    <div class="popup-close" onclick="closePopup()">✖</div>
-    <div id="popup-content">
-      <!-- תוכן משתנה כאן -->
-    </div>
-  </div>
+<div class="popup" onclick="event.stopPropagation()">
+<div class="popup-close" onclick="closePopup()">✖</div>
+<div id="popup-content">
+<!-- תוכן משתנה כאן -->
 </div>
-
+</div>
+</div>
 <script>
   const popupTexts = [
     `<h3>GraphSense</h3><p>GraphSense הוא כלי קוד פתוח לניתוח רשתות בלוקצ'יין. מאפשר מיפוי של ארנקים, קשרים בין עסקאות, וזיהוי דפוסים על גבי רשתות שונות. אידיאלי למחקר והבנת תעבורת קריפטו.</p>`,
@@ -928,17 +965,16 @@ setInterval(updatePrices, 60000);
     document.getElementById("popup-overlay").style.display = "none";
   }
 </script>
-
 </body>
 </html>
-
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+
+<html dir="rtl" lang="he">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>שותפים ולקוחות</title>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>שותפים ולקוחות</title>
+<style>
     body {
       background: #000;
       color: white;
@@ -993,48 +1029,45 @@ setInterval(updatePrices, 60000);
   </style>
 </head>
 <body>
-
 <section id="partners">
-  <h2>שותפים ולקוחות</h2>
-  <div class="partners-carousel">
-    <div class="partner">
-      <div title="סייבר ישראל">🛡️</div>
-      <div>סייבר ישראל</div>
-    </div>
-    <div class="partner">
-      <div title="עורכי דין">⚖️</div>
-      <div>עורכי דין</div>
-    </div>
-    <div class="partner">
-      <div title="מאגרי מודיעין">📊</div>
-      <div>מאגרי מודיעין</div>
-    </div>
-    <div class="partner">
-      <div title="בורסות">🏦</div>
-      <div>בורסות</div>
-    </div>
-    <div class="partner">
-      <div title="משקיעים">💼</div>
-      <div>משקיעים</div>
-    </div>
-    <div class="partner">
-      <div title="רשויות חוק">👮‍♂️</div>
-      <div>רשויות חוק</div>
-    </div>
-  </div>
+<h2>שותפים ולקוחות</h2>
+<div class="partners-carousel">
+<div class="partner">
+<div title="סייבר ישראל">🛡️</div>
+<div>סייבר ישראל</div>
+</div>
+<div class="partner">
+<div title="עורכי דין">⚖️</div>
+<div>עורכי דין</div>
+</div>
+<div class="partner">
+<div title="מאגרי מודיעין">📊</div>
+<div>מאגרי מודיעין</div>
+</div>
+<div class="partner">
+<div title="בורסות">🏦</div>
+<div>בורסות</div>
+</div>
+<div class="partner">
+<div title="משקיעים">💼</div>
+<div>משקיעים</div>
+</div>
+<div class="partner">
+<div title="רשויות חוק">👮‍♂️</div>
+<div>רשויות חוק</div>
+</div>
+</div>
 </section>
-
 </body>
 </html>
-
-
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+
+<html dir="rtl" lang="he">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>שאלות נפוצות</title>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>שאלות נפוצות</title>
+<style>
     body {
       font-family: Arial, sans-serif;
       background: #111;
@@ -1092,36 +1125,35 @@ setInterval(updatePrices, 60000);
   </style>
 </head>
 <body>
-  <section class="fade-in" id="faq">
-    <h2>שאלות נפוצות</h2>
-    <div class="faq-filter">
-      <input id="faq-search" placeholder="חפש שאלה..." type="text" />
-    </div>
-    <div class="faq-container">
-      <div class="faq-item">
-        <div class="faq-question">איך יודעים אם אפשר לאתר את הקריפטו?</div>
-        <div class="faq-answer">אנו משתמשים בטכנולוגיות מתקדמות לזיהוי ומיפוי כתובות ברשתות בלוקצ'יין.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">האם אתם מחוברים למשטרה או למס הכנסה?</div>
-        <div class="faq-answer">אנו פועלים בשיתוף פעולה עם גורמי אכיפה וייעוץ משפטי מוביל.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">כמה זמן נמשך תהליך חקירה?</div>
-        <div class="faq-answer">התהליך משתנה בהתאם למורכבות המקרה, אך ממוצע הטיפול נע בין 2 שבועות לחודש.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">האם אני מקבל דו"ח?</div>
-        <div class="faq-answer">כן, עם סיום החקירה תקבלו דו"ח מפורט הכולל את ממצאי הדיון.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">כמה זה עולה?</div>
-        <div class="faq-answer">עלויות משתנות בהתאם להיקף וטיב השירות – ניתן לקבל ייעוץ ראשוני ללא עלות.</div>
-      </div>
-    </div>
-  </section>
-
-  <script>
+<section class="fade-in" id="faq">
+<h2>שאלות נפוצות</h2>
+<div class="faq-filter">
+<input id="faq-search" placeholder="חפש שאלה..." type="text"/>
+</div>
+<div class="faq-container">
+<div class="faq-item">
+<div class="faq-question">איך יודעים אם אפשר לאתר את הקריפטו?</div>
+<div class="faq-answer">אנו משתמשים בטכנולוגיות מתקדמות לזיהוי ומיפוי כתובות ברשתות בלוקצ'יין.</div>
+</div>
+<div class="faq-item">
+<div class="faq-question">האם אתם מחוברים למשטרה או למס הכנסה?</div>
+<div class="faq-answer">אנו פועלים בשיתוף פעולה עם גורמי אכיפה וייעוץ משפטי מוביל.</div>
+</div>
+<div class="faq-item">
+<div class="faq-question">כמה זמן נמשך תהליך חקירה?</div>
+<div class="faq-answer">התהליך משתנה בהתאם למורכבות המקרה, אך ממוצע הטיפול נע בין 2 שבועות לחודש.</div>
+</div>
+<div class="faq-item">
+<div class="faq-question">האם אני מקבל דו"ח?</div>
+<div class="faq-answer">כן, עם סיום החקירה תקבלו דו"ח מפורט הכולל את ממצאי הדיון.</div>
+</div>
+<div class="faq-item">
+<div class="faq-question">כמה זה עולה?</div>
+<div class="faq-answer">עלויות משתנות בהתאם להיקף וטיב השירות – ניתן לקבל ייעוץ ראשוני ללא עלות.</div>
+</div>
+</div>
+</section>
+<script>
     const questions = document.querySelectorAll('.faq-question');
     questions.forEach(q => {
       q.addEventListener('click', () => {
@@ -1143,15 +1175,14 @@ setInterval(updatePrices, 60000);
   </script>
 </body>
 </html>
-
-
 <!DOCTYPE html>
+
 <html lang="he">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>טופס פתיחת תיק</title>
-  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@500;600&display=swap" rel="stylesheet">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>טופס פתיחת תיק</title>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@500;600&amp;display=swap" rel="stylesheet"/>
 </head>
 <body style="background-color: #111; color: white; font-family: 'Heebo', sans-serif; margin: 0; padding: 2em;">
 <section id="contact" style="background-color: #1e1e1e; padding: 4em 2em; color: white;">
@@ -1195,13 +1226,13 @@ setInterval(updatePrices, 60000);
 </section>
 </body>
 </html>
-
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+
+<html dir="rtl" lang="he">
 <head>
-  <meta charset="UTF-8">
-  <title>שורת ניווט תחתונה</title>
-  <style>
+<meta charset="utf-8"/>
+<title>שורת ניווט תחתונה</title>
+<style>
     body {
       margin: 0;
       padding: 0;
@@ -1223,11 +1254,8 @@ setInterval(updatePrices, 60000);
   </style>
 </head>
 <body>
-
-  <div class="footer">
+<div class="footer">
     © 2025 CRYPTONO - כל הזכויות שמורות | עיצוב ופיתוח
   </div>
-
 </body>
 </html>
-
