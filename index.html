@@ -1,4 +1,5 @@
 
+<!-- Start of cryptono_header.html -->
 <!DOCTYPE html>
 
 <html dir="rtl" lang="he">
@@ -7,105 +8,86 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>CRYPTONO Header</title>
 <style>
-    body {
-      margin: 0;
-      background-color: #000;
-    }
+ body {
+ margin: 0;
+ background-color: transparent;
+ }
 
-    .nav-btn {
-      color: #fff;
-      text-decoration: none;
-      padding: 0.45rem 1rem;
-      border-radius: 10px;
-      background-color: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(0, 224, 255, 0.2);
-      transition: all 0.3s ease;
-      font-weight: 500;
-      font-size: 0.95rem;
-    }
+ .nav-btn {
+ color: #eee;
+ text-decoration: none;
+ padding: 0.45rem 1rem;
+ border-radius: 10px;
+ background-color: rgba(255, 255, 255, 0.04);
+ border: 1px solid rgba(0, 224, 255, 0.2);
+ transition: all 0.3s ease;
+ font-weight: 500;
+ font-size: 0.95rem;
+ }
 
-    .nav-btn:hover {
-      background-color: rgba(0, 224, 255, 0.12);
-      border-color: #00e0ff;
-      color: #00e0ff;
-    }
+ .nav-btn:hover {
+ background-color: rgba(0, 224, 255, 0.12);
+ border-color: #00e0ff;
+ color: #00e0ff;
+ }
 
-    .highlight {
-      background-color: rgba(0, 224, 255, 0.12);
-      border: 1px solid #00e0ff;
-    }
+ .highlight {
+ background-color: rgba(0, 224, 255, 0.12);
+ border: 1px solid #00e0ff;
+ }
 
-    .highlight:hover {
-      background-color: rgba(0, 224, 255, 0.25);
+ .highlight:hover {
+ background-color: rgba(0, 224, 255, 0.25);
+ }
+ 
+    .red-highlight {
+      background-color: rgba(255, 0, 0, 0.15) !important;
+      border: none !important;
+      color: #fff !important;
     }
-  
+    .red-highlight:hover {
+      background-color: rgba(255, 0, 0, 0.3) !important;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    </style>
+<style>
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+section {
+  scroll-snap-align: start;
+}
+
 body {
-    background: url('https://res.cloudinary.com/dreoq0pxm/image/upload/v1748557522/7db8882bd-2773-4990-8858-31605c5bef55%D7%9Cef71_tyykos.png') no-repeat center center fixed;
-    background-size: cover;
-    margin: 0;
-    padding: 0;
+  background-image: url('https://res.cloudinary.com/dreoq0pxm/image/upload/v1748557522/7db8882bd-2773-4990-8858-31605c5bef55%D7%9Cef71_tyykos.png');
+  background-attachment: fixed;
+  background-size: 110%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-section, header, footer, .footer, #contact {
-    width: 100%;
-    box-sizing: border-box;
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-
-@media (min-width: 768px) {
-  .services-grid {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 25px !important;
-  }
-}
-
-body {
-    background: url('https://res.cloudinary.com/dreoq0pxm/image/upload/v1748557522/7db8882bd-2773-4990-8858-31605c5bef55%D7%9Cef71_tyykos.png') no-repeat center center fixed;
-    background-size: cover;
-    background-attachment: fixed;
-    background-blend-mode: lighten;
-}
-</style>
-</head>
-<body style="background: url('https://i.postimg.cc/3NQbVBmZ/7db8882bd-2773-4990-8858-31605c5bef55-ef71.png') center center / cover no-repeat fixed">
-<header id="header" style="background:#000; padding:1rem 2rem; position:sticky; top:0; z-index:1000; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #00e0ff; direction: rtl; backdrop-filter: blur(4px);">
+</style></head>
+<body>
+<header style="background: transparent; padding:1rem 2rem; position:sticky; top:0; z-index:1000; display:flex; justify-content:space-between; align-items:center;border-bottom: 1px solid #004466; direction: rtl; backdrop-filter: blur(4px);">
 <div class="logo" style="font-weight:bold; font-size:1.6em; color:#00e0ff; letter-spacing:1px;">CRYPTONO.ai</div>
 <nav style="display:flex; gap:0.5rem;">
-<a class="nav-btn" href="#header">בית</a>
+<a class="nav-btn" href="#home">בית</a>
 <a class="nav-btn" href="#what-we-do">מה אנחנו עושים</a>
 <a class="nav-btn" href="#services">שירותים</a>
 <a class="nav-btn" href="#how-it-works">תהליך</a>
 <a class="nav-btn" href="#statistics">הצלחות</a>
 <a class="nav-btn" href="#technology">טכנולוגיה</a>
 <a class="nav-btn" href="#faq">שאלות</a>
-<a class="nav-btn highlight" href="#contact">פתח תיק</a>
+<a class="nav-btn red-highlight" href="#contact">פתח חקירה</a>
 </nav>
 </header>
-<script>
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  });
-</script>
-<script>
-document.querySelectorAll('a[href="#statistics"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const element = document.getElementById("statistics");
-    const yOffset = -80; 
-    const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-    window.scrollTo({top: y, behavior: 'smooth'});
-  });
-});
-</script>
 </body>
 </html>
+<!-- End of cryptono_header.html -->
+<!-- Start of cryptono_ai.html -->
 <!DOCTYPE html>
 
 <html dir="rtl" lang="he">
@@ -115,179 +97,67 @@ document.querySelectorAll('a[href="#statistics"]').forEach(anchor => {
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700&amp;display=swap" rel="stylesheet"/>
 <style>
-    body {
-      background-color: #000;
-      color: #eee;
-      font-family: 'Rubik', sans-serif;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
+ body {
+ background-color: transparent;
+ color: #eee;
+ font-family: 'Rubik', sans-serif;
+ margin: 0;
+ padding: 0;
+ text-align: center;
+ }
 
-    section {
-      padding: 80px 20px;
-    }
+ section {
+ padding: 80px 20px;
+ }
 
-    h1 {
-      font-size: 3.6em;
-      color: #00b3e6;
-      margin-bottom: 20px;
-    }
+ h1 {
+ font-size: 3.6em;
+ color: #00b3e6;
+ margin-bottom: 20px;
+ }
 
-    p {
-      font-size: 1.3em;
-      color: #ccc;
-      margin-bottom: 40px;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-      line-height: 1.6;
-    }
+ p {
+ font-size: 1.3em;
+ color: #ccc;
+ margin-bottom: 40px;
+ max-width: 700px;
+ margin-left: auto;
+ margin-right: auto;
+ line-height: 1.6;
+ }
 
-    .cta-button {
-      background: #00b3e6;
-      color: #fff;
-      padding: 14px 34px;
-      font-size: 1.1em;
-      font-weight: bold;
-      text-decoration: none;
-      border: none;
-      border-radius: 0;
-      cursor: pointer;
-      transition: background 0.3s ease;
-      box-shadow: 0 0 12px rgba(0, 179, 230, 0.5);
-    }
+ .cta-button {
+ background: #00b3e6;
+ color: #eee;
+ padding: 14px 34px;
+ font-size: 1.1em;
+ font-weight: bold;
+ text-decoration: none;
+ border: none;
+ border-radius: 0;
+ cursor: pointer;
+ transition: background 0.3s ease;
+ box-shadow: 0 0 12px rgba(0, 179, 230, 0.5);
+ }
 
-    .cta-button:hover {
-      background: #009fcc;
-    }
-  </style>
+ .cta-button:hover {
+ background: #009fcc;
+ }
+ </style>
 </head>
 <body>
-<section>
+<section id="home">
 <h1>Cryptono.AI</h1>
 <p>
-      מעקב אחר מטבעות קריפטו<br/>
-      חקירות בלוקצ'יין, גשרים וארנקים
-    </p>
-<a class="cta-button" href="#what-we-do">למד/י עוד</a>
+ מעקב אחר מטבעות קריפטו<br/>
+ חקירות בלוקצ'יין, גשרים וארנקים
+ </p>
+<a class="cta-button" href="#services">למד/י עוד</a>
 </section>
 </body>
 </html>
-<!DOCTYPE html>
-
-<html dir="rtl" lang="he">
-<head>
-<meta charset="utf-8"/>
-<title>וידג'ט מחירי קריפטו</title>
-<style>
-    body {
-      margin: 0;
-      font-family: 'Heebo', sans-serif;
-      background-color: #000;
-      color: #fff;
-    }
-
-    .crypto-ticker {
-      background-color: #111;
-      overflow: hidden;
-      white-space: nowrap;
-      padding: 10px 0;
-      border-top: 1px solid #333;
-      border-bottom: 1px solid #333;
-    }
-
-    .crypto-content {
-      display: inline-block;
-      animation: scroll 35s linear infinite;
-      font-size: 16px;
-    }
-
-    .crypto-item {
-      display: inline-block;
-      margin: 0 25px;
-    }
-
-    .crypto-price {
-      margin-left: 8px;
-    }
-
-    .up {
-      color: #00ff87;
-    }
-
-    .down {
-      color: #ff4d4d;
-    }
-
-    @keyframes scroll {
-      from { transform: translateX(100%); }
-      to   { transform: translateX(-100%); }
-    }
-
-    .icon {
-      width: 18px;
-      vertical-align: middle;
-      margin-left: 5px;
-    }
-  </style>
-</head>
-<body>
-<div class="crypto-ticker">
-<div class="crypto-content" id="cryptoTicker">
-    טוען מחירים...
-  
-    טוען מחירים...
-  
-    טוען מחירים...
-  
-    טוען מחירים...
-  
-    טוען מחירים...
-  
-    טוען מחירים...
-  </div>
-</div>
-<script>
-const coins = {
-  bitcoin: { symbol: "BTC", icon: "https://assets.coingecko.com/coins/images/1/small/bitcoin.png" },
-  ethereum: { symbol: "ETH", icon: "https://assets.coingecko.com/coins/images/279/small/ethereum.png" },
-  solana: { symbol: "SOL", icon: "https://assets.coingecko.com/coins/images/4128/small/solana.png" },
-  binancecoin: { symbol: "BNB", icon: "https://assets.coingecko.com/coins/images/825/small/binance-coin-logo.png" },
-  dogecoin: { symbol: "DOGE", icon: "https://assets.coingecko.com/coins/images/5/small/dogecoin.png" }
-};
-
-async function updatePrices() {
-  const priceURL = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana,binancecoin,dogecoin&vs_currencies=usd&include_24hr_change=true";
-  const res = await fetch(priceURL);
-  const data = await res.json();
-
-  const container = document.getElementById("cryptoTicker");
-  container.innerHTML = "";
-
-  for (let key in coins) {
-    const { symbol, icon } = coins[key];
-    const price = data[key].usd.toFixed(2);
-    const change = data[key].usd_24h_change.toFixed(2);
-    const changeClass = change >= 0 ? "up" : "down";
-    const changeSymbol = change >= 0 ? "▲" : "▼";
-
-    container.innerHTML += `
-      <span class="crypto-item">
-        <img class="icon" src="${icon}" alt="${symbol}" />
-        ${symbol}:
-        <span class="crypto-price">$${price}</span>
-        <span class="${changeClass}">${changeSymbol} ${Math.abs(change)}%</span>
-      </span>
-    `;
-  }
-}
-
-updatePrices();
-setInterval(updatePrices, 60000);
-</script>
-</body>
-</html>
+<!-- End of cryptono_ai.html -->
+<!-- Start of about-cryptono.html -->
 <!DOCTYPE html>
 
 <html dir="rtl" lang="he">
@@ -296,39 +166,39 @@ setInterval(updatePrices, 60000);
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>אודות - Cryptono</title>
 <style>
-    body {
-      background-color: #000;
-      color: #fff;
-      font-family: 'Arial', sans-serif;
-      padding: 2em;
-      line-height: 1.9;
-    }
-    h2 {
-      text-align: center;
-      font-size: 2em;
-      margin-bottom: 1em;
-    }
-    p, li {
-      font-size: 1.1em;
-    }
-    ul {
-      margin-right: 20px;
-    }
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    .cloud-box {
-      background-color: rgba(255, 255, 255, 0.07);
-      border-radius: 20px;
-      padding: 1em;
-      margin: 1em auto;
-      direction: rtl;
-      max-width: 700px;
-      text-align: right;
-    }
-  </style>
+ body {
+ background-color: transparent;
+ color: #eee;
+ font-family: 'Arial', sans-serif;
+ padding: 2em;
+ line-height: 1.9;
+ }
+ h2 {
+ text-align: center;
+ font-size: 2em;
+ margin-bottom: 1em;
+ }
+ p, li {
+ font-size: 1.1em;
+ }
+ ul {
+ margin-right: 20px;
+ }
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ text-align: center;
+ }
+ .cloud-box {
+ background-color: rgba(255, 255, 255, 0.07);
+ border-radius: 20px;
+ padding: 1em;
+ margin: 1em auto;
+ direction: rtl;
+ max-width: 700px;
+ text-align: right;
+ }
+ </style>
 </head>
 <body>
 <section class="fade-in" id="what-we-do">
@@ -337,7 +207,7 @@ setInterval(updatePrices, 60000);
 <p><strong>מובילי תחום האיתור הפלילי בעולם הקריפטו</strong></p>
 <hr style="border: none; height: 0.3px; background-color: #ff4d4d; width: 320px; margin: 2px auto;"/>
 <p><strong>
-      ב־Cryptono אנו מפתחים פתרונות טכנולוגיים ייחודיים לאיתור ומעקב אחר עסקאות חשודות על גבי כל רשת בלוקצ'יין. הצוותים שלנו מתמחים בניתוח פעילות פיננסית הקשורה לעבירות מקוונות, תוך שימוש בשיטות פיענוח מתקדמות לזיהוי תבניות מרמה, הונאה וגניבה. המערכות שלנו נמצאות בשימוש שוטף על ידי בנקים, פלטפורמות מסחר, גופי פינטק ורשויות רגולציה לבחינת רמות סיכון בעסקאות מבוססות מטבעות דיגיטליים. לאורך השנים, סייענו לגופי אכיפה בינלאומיים באיתור עברייני קריפטו, בהובלת חקירות ובהשבת נכסים גנובים לבעליהם החוקיים — בהיקפים של מיליוני דולרים.</strong></p>
+ ב־Cryptono אנו מפתחים פתרונות טכנולוגיים ייחודיים לאיתור ומעקב אחר עסקאות חשודות על גבי כל רשת בלוקצ'יין. הצוותים שלנו מתמחים בניתוח פעילות פיננסית הקשורה לעבירות מקוונות, תוך שימוש בשיטות פיענוח מתקדמות לזיהוי תבניות מרמה, הונאה וגניבה. המערכות שלנו נמצאות בשימוש שוטף על ידי בנקים, פלטפורמות מסחר, גופי פינטק ורשויות רגולציה לבחינת רמות סיכון בעסקאות מבוססות מטבעות דיגיטליים. לאורך השנים, סייענו לגופי אכיפה בינלאומיים באיתור עברייני קריפטו, בהובלת חקירות ובהשבת נכסים גנובים לבעליהם החוקיים — בהיקפים של מיליוני דולרים.</strong></p>
 <p style="text-align: center;">בנוסף, אנו מבצעים ביקורות עבור חברות השקעה וארגונים פיננסיים, הכוללות בין השאר:</p>
 <div class="cloud-box">
 <ul>
@@ -351,6 +221,8 @@ setInterval(updatePrices, 60000);
 </section>
 </body>
 </html>
+<!-- End of about-cryptono.html -->
+<!-- Start of services_section_popup.html -->
 <!DOCTYPE html>
 
 <html dir="rtl" lang="he">
@@ -359,113 +231,113 @@ setInterval(updatePrices, 60000);
 <title>השירותים שלנו – הגנה מקצה לקצה</title>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <style>
-    body {
-      background-color: #000;
-      color: #fff;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      direction: rtl;
-    }
-    #services {
-      padding: 60px 5%;
-      max-width: 1300px;
-      margin: auto;
-      text-align: center;
-      position: relative;
-    }
-    h2 {
-      font-size: 1.8em;
-      margin-bottom: 60px;
-      color: #00e0ff;
-      border-bottom: 1px solid #00e0ff;
-      display: inline-block;
-      padding-bottom: 10px;
-      width: 100%;
-    }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
-    }
-    .service-card {
-      background-color: #121212;
-      padding: 25px 15px;
-      border-radius: 12px;
-      text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s;
-      border: 1px solid #00e0ff22;
-      z-index: 1;
-    }
-    .service-card:hover {
-      transform: translateY(-7px);
-      box-shadow: 0 8px 20px rgba(0, 224, 255, 0.2);
-    }
-    .service-card h3 {
-      margin-bottom: 20px;
-      font-size: 1.2em;
-      color: #00e0ff;
-    }
-    .info-button {
-      background-color: #00e0ff;
-      color: #000;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: background-color 0.3s;
-    }
-    .info-button:hover {
-      background-color: #00b8cc;
-    }
-    .popup {
-      display: none;
-      position: fixed;
-      z-index: 999;
-      right: 50%;
-      top: 50%;
-      transform: translate(50%, -50%);
-      background-color: #1a1a1a;
-      padding: 30px;
-      border-radius: 12px;
-      max-width: 90%;
-      color: #fff;
-      box-shadow: 0 0 20px rgba(0, 224, 255, 0.4);
-    }
-    .popup h3 {
-      color: #00e0ff;
-    }
-    .close-btn {
-      margin-top: 20px;
-      background-color: #00e0ff;
-      color: #000;
-      padding: 8px 16px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-  </style>
+ body {
+ background-color: transparent;
+ color: #eee;
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ margin: 0;
+ padding: 0;
+ direction: rtl;
+ }
+ #services {
+ padding: 60px 5%;
+ max-width: 1300px;
+ margin: auto;
+ text-align: center;
+ position: relative;
+ }
+ h2 {
+ font-size: 1.8em;
+ margin-bottom: 60px;
+ color: #00e0ff;
+ border-bottom: 1px solid #00e0ff;
+ display: inline-block;
+ padding-bottom: 10px;
+ width: 100%;
+ }
+ .services-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+ gap: 25px;
+ }
+ .service-card {
+ background-color: #121212;
+ padding: 25px 15px;
+ border-radius: 12px;
+ text-align: center;
+ transition: transform 0.3s, box-shadow 0.3s;
+ border: 1px solid #00e0ff22;
+ z-index: 1;
+ }
+ .service-card:hover {
+ transform: translateY(-7px);
+ box-shadow: 0 8px 20px rgba(0, 224, 255, 0.2);
+ }
+ .service-card h3 {
+ margin-bottom: 20px;
+ font-size: 1.2em;
+ color: #00e0ff;
+ }
+ .info-button {
+ background-color: #00e0ff;
+ color: #000;
+ border: none;
+ padding: 10px 20px;
+ border-radius: 8px;
+ cursor: pointer;
+ font-weight: bold;
+ transition: background-color 0.3s;
+ }
+ .info-button:hover {
+ background-color: #00b8cc;
+ }
+ .popup {
+ display: none;
+ position: fixed;
+ z-index: 999;
+ right: 50%;
+ top: 50%;
+ transform: translate(50%, -50%);
+ background-color: #1a1a1a;
+ padding: 30px;
+ border-radius: 12px;
+ max-width: 90%;
+ color: #eee;
+ box-shadow: 0 0 20px rgba(0, 224, 255, 0.4);
+ }
+ .popup h3 {
+ color: #00e0ff;
+ }
+ .close-btn {
+ margin-top: 20px;
+ background-color: #00e0ff;
+ color: #000;
+ padding: 8px 16px;
+ border: none;
+ border-radius: 6px;
+ cursor: pointer;
+ font-weight: bold;
+ }
+ </style>
 <script>
-    function openPopup(topic) {
-      document.querySelectorAll('.popup').forEach(p => p.style.display = 'none');
-      const popup = document.getElementById('popup-' + topic);
-      if (popup) popup.style.display = 'block';
-    }
-    function closePopup(topic) {
-      const popup = document.getElementById('popup-' + topic);
-      if (popup) popup.style.display = 'none';
-    }
-    document.addEventListener('click', function(event) {
-      const popups = document.querySelectorAll('.popup');
-      popups.forEach(popup => {
-        if (popup.style.display === 'block' && !popup.contains(event.target) && !event.target.classList.contains('info-button')) {
-          popup.style.display = 'none';
-        }
-      });
-    });
-  </script>
+ function openPopup(topic) {
+ document.querySelectorAll('.popup').forEach(p => p.style.display = 'none');
+ const popup = document.getElementById('popup-' + topic);
+ if (popup) popup.style.display = 'block';
+ }
+ function closePopup(topic) {
+ const popup = document.getElementById('popup-' + topic);
+ if (popup) popup.style.display = 'none';
+ }
+ document.addEventListener('click', function(event) {
+ const popups = document.querySelectorAll('.popup');
+ popups.forEach(popup => {
+ if (popup.style.display === 'block' && !popup.contains(event.target) && !event.target.classList.contains('info-button')) {
+ popup.style.display = 'none';
+ }
+ });
+ });
+ </script>
 </head>
 <body>
 <section id="services">
@@ -482,11 +354,32 @@ setInterval(updatePrices, 60000);
 <div class="popup" id="popup-behavior"><h3>ניטור התנהגותי</h3><p>מעקב בזמן אמת אחר פעילות חשודה של תוקפים.</p><button class="close-btn" onclick="closePopup('behavior')">סגור</button></div>
 <div class="popup" id="popup-blocks"><h3>מעקב וניתוח בלוקים</h3><p>בדיקת פעילות עסקאות, חוזים ונתוני שימוש בבלוקצ'יין.</p><button class="close-btn" onclick="closePopup('blocks')">סגור</button></div>
 <div class="popup" id="popup-exchanges"><h3>עבודה מול בורסות</h3><p>תיאום עם בורסות, שווקים ו־DEX לאיתור ומניעה.</p><button class="close-btn" onclick="closePopup('exchanges')">סגור</button></div>
-<div class="popup" id="popup-aml"><h3>מניעת הלבנת הון (AML)</h3><p>הלבנת הון היא תהליך שבו מומר כסף שהושג בדרכים בלתי חוקיות לכסף חוקי לכאורה. גם אם החברה שלך פועלת לפי הכללים, אין זה אומר ששותפיך העסקיים מצייתים לאותם תקני AML.</p><button class="close-btn" onclick="closePopup('aml')">סגור</button></div>
+<div class="popup" id="popup-aml"><h3>מניעת הלבנת הון (AML)</h3><p>הלבנת הון היא תהליך שבו מומר כסף שהושג בדרכים בלתי חוקיות לכסף חוקי לכאורה...</p><button class="close-btn" onclick="closePopup('aml')">סגור</button></div>
 <div class="popup" id="popup-scam"><h3>SCAM / PHISHING</h3><p>זיהוי תרחישי הונאה כמו פישינג, טוקנים מזויפים ופעולות רמאות אחרות ברשת.</p><button class="close-btn" onclick="closePopup('scam')">סגור</button></div>
 </section>
+<script>
+  function openPopup(topic) {
+    document.querySelectorAll('.popup').forEach(p => p.style.display = 'none');
+    const popup = document.getElementById('popup-' + topic);
+    if (popup) popup.style.display = 'block';
+  }
+  function closePopup(topic) {
+    const popup = document.getElementById('popup-' + topic);
+    if (popup) popup.style.display = 'none';
+  }
+  document.addEventListener('click', function(event) {
+    const popups = document.querySelectorAll('.popup');
+    popups.forEach(popup => {
+      if (popup.style.display === 'block' && !popup.contains(event.target) && !event.target.classList.contains('info-button')) {
+        popup.style.display = 'none';
+      }
+    });
+  });
+</script>
 </body>
 </html>
+<!-- End of services_section_popup.html -->
+<!-- Start of how_it_works_section.html -->
 <section class="process-flow" id="how-it-works">
 <h2>תהליך</h2>
 <hr class="divider"/>
@@ -541,109 +434,111 @@ setInterval(updatePrices, 60000);
 </div>
 </section>
 <style>
-  body {
-    background-color: #000;
-    margin: 0;
-    padding: 0;
-  }
-  .process-flow {
-    padding: 3rem 1rem;
-    direction: rtl;
-    text-align: right;
-    color: #fff;
-    max-width: 1100px;
-    margin: auto;
-  }
-  .process-flow h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-  }
-  .underline {
-    width: fit-content;
-    height: 3px;
-    background: #00e0ff;
-    margin: 0 auto 2rem auto;
-    border-radius: 2px;
-  }
-  .divider {
-    border: none;
-    height: 1px;
-    background-color: #00e0ff;
-    width: 60%;
-    margin: 1rem auto 2rem auto;
-    opacity: 0.3;
-  }
-  .timeline {
-    position: relative;
-    padding: 2rem 0;
-    max-width: 1000px;
-    margin: auto;
-  }
-  .timeline-line-decor {
-    height: 10px;
-    border-right: 1px dashed #00e0ff55;
-    margin: 0 19px;
-  }
-  .timeline-step {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 2rem;
-    position: relative;
-    gap: 2rem;
-    flex-wrap: wrap;
-  }
-  .timeline-step .circle {
-    background: rgba(0, 224, 255, 0.15);
-    border: 2px solid #00e0ff;
-    color: #00e0ff;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    line-height: 40px;
-    font-weight: bold;
-    flex-shrink: 0;
-    backdrop-filter: blur(2px);
-  }
-  .timeline-step .content {
-    flex: 1 1 400px;
-    margin-right: 1rem;
-  }
-  .timeline-step .step-image {
-    flex: 1 1 250px;
-    max-width: 300px;
-    display: flex;
-    align-items: center;
-  }
-  .timeline-step .step-image img {
-    width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(0, 224, 255, 0.2);
-  }
-  .line {
-    height: 40px;
-    border-right: 2px solid #00e0ff;
-    margin: 0 19px;
-  }
-  @media (max-width: 800px) {
-    .timeline-step {
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-  @media (max-width: 600px) {
-    .timeline-step {
-      flex-direction: column;
-      align-items: center;
-    }
-    .timeline-step .content {
-      margin: 0;
-      text-align: center;
-    }
-  }
+ body {
+ background-color: transparent;
+ margin: 0;
+ padding: 0;
+ }
+ .process-flow {
+ padding: 3rem 1rem;
+ direction: rtl;
+ text-align: right;
+ color: #eee;
+ max-width: 1100px;
+ margin: auto;
+ }
+ .process-flow h2 {
+ text-align: center;
+ font-size: 2.5rem;
+ margin-bottom: 0.5rem;
+ }
+ .underline {
+ width: fit-content;
+ height: 3px;
+ background: #00e0ff;
+ margin: 0 auto 2rem auto;
+ border-radius: 2px;
+ }
+ .divider {
+ border: none;
+ height: 1px;
+ background-color: #00e0ff;
+ width: 60%;
+ margin: 1rem auto 2rem auto;
+ opacity: 0.3;
+ }
+ .timeline {
+ position: relative;
+ padding: 2rem 0;
+ max-width: 1000px;
+ margin: auto;
+ }
+ .timeline-line-decor {
+ height: 10px;
+ border-right: 1px dashed #00e0ff55;
+ margin: 0 19px;
+ }
+ .timeline-step {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ margin-bottom: 2rem;
+ position: relative;
+ gap: 2rem;
+ flex-wrap: wrap;
+ }
+ .timeline-step .circle {
+ background: rgba(0, 224, 255, 0.15);
+ border: 2px solid #00e0ff;
+ color: #00e0ff;
+ border-radius: 50%;
+ width: 40px;
+ height: 40px;
+ text-align: center;
+ line-height: 40px;
+ font-weight: bold;
+ flex-shrink: 0;
+ backdrop-filter: blur(2px);
+ }
+ .timeline-step .content {
+ flex: 1 1 400px;
+ margin-right: 1rem;
+ }
+ .timeline-step .step-image {
+ flex: 1 1 250px;
+ max-width: 300px;
+ display: flex;
+ align-items: center;
+ }
+ .timeline-step .step-image img {
+ width: 100%;
+ border-radius: 12px;
+ box-shadow: 0 0 20px rgba(0, 224, 255, 0.2);
+ }
+ .line {
+ height: 40px;
+ border-right: 2px solid #00e0ff;
+ margin: 0 19px;
+ }
+ @media (max-width: 800px) {
+ .timeline-step {
+ flex-direction: column;
+ align-items: center;
+ }
+ }
+ @media (max-width: 600px) {
+ .timeline-step {
+ flex-direction: column;
+ align-items: center;
+ }
+ .timeline-step .content {
+ margin: 0;
+ text-align: center;
+ }
+ }
 </style>
+<!-- End of how_it_works_section.html -->
+<!-- Start of STATISTIKS.html -->
 <!DOCTYPE html>
 
 <html dir="rtl" lang="he">
@@ -652,65 +547,65 @@ setInterval(updatePrices, 60000);
 <title>סטטיסטיקות הצלחה</title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <style>
-    body {
-      background-color: #000;
-      font-family: 'Arial', sans-serif;
-      color: white;
-      margin: 0;
-      padding: 0;
-    }
+ body {
+ background-color: transparent;
+ font-family: 'Arial', sans-serif;
+ color: #eee;
+ margin: 0;
+ padding: 0;
+ }
 
-    section {
-      padding: 2em 1em;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+ section {
+ padding: 2em 1em;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ }
 
-    h2 {
-      text-align: center;
-      color: white;
-      margin-bottom: 2em;
-      font-size: 2.2em;
-    }
+ h2 {
+ text-align: center;
+ color: #eee;
+ margin-bottom: 2em;
+ font-size: 2.2em;
+ }
 
-    .circle-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      justify-items: center;
-      gap: 1em;
-      width: 100%;
-      max-width: 800px;
-    }
+ .circle-grid {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ justify-items: center;
+ gap: 1em;
+ width: 100%;
+ max-width: 800px;
+ }
 
-    .circle {
-      background: linear-gradient(145deg, #222, #111);
-      border-radius: 15px;
-      width: 150px;
-      height: 150px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 1em;
-      box-shadow: 0 0 20px rgba(0, 209, 209, 0.15);
-    }
+ .circle {
+ background: linear-gradient(145deg, #222, #111);
+ border-radius: 15px;
+ width: 150px;
+ height: 150px;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ text-align: center;
+ padding: 1em;
+ box-shadow: 0 0 20px rgba(0, 209, 209, 0.15);
+ }
 
-    .circle span {
-      font-size: 1.5em;
-      font-weight: bold;
-      color: #00ffff;
-      margin-bottom: 0.3em;
-      text-shadow: 0 0 6px rgba(0, 255, 255, 0.4);
-    }
+ .circle span {
+ font-size: 1.5em;
+ font-weight: bold;
+ color: #00ffff;
+ margin-bottom: 0.3em;
+ text-shadow: 0 0 6px rgba(0, 255, 255, 0.4);
+ }
 
-    .circle p {
-      font-size: 0.85em;
-      color: #ccc;
-      margin: 0;
-    }
-  </style>
+ .circle p {
+ font-size: 0.85em;
+ color: #ccc;
+ margin: 0;
+ }
+ </style>
 </head>
 <body>
 <section id="statistics">
@@ -743,27 +638,29 @@ setInterval(updatePrices, 60000);
 </div>
 </section>
 <script>
-  const counters = document.querySelectorAll('.circle span');
-  counters.forEach(counter => {
-    const target = +counter.getAttribute('data-target');
-    let count = 0;
-    const increment = target / 100;
+ const counters = document.querySelectorAll('.circle span');
+ counters.forEach(counter => {
+ const target = +counter.getAttribute('data-target');
+ let count = 0;
+ const increment = target / 100;
 
-    const update = () => {
-      if (count < target) {
-        count += increment;
-        counter.innerText = Math.ceil(count);
-        setTimeout(update, 20);
-      } else {
-        counter.innerText = target + (target === 0 ? '$' : target === 500 || target === 300 ? '+' : target === 24 ? '/7' : (target >= 1000 ? '+' : ''));
-      }
-    };
+ const update = () => {
+ if (count < target) {
+ count += increment;
+ counter.innerText = Math.ceil(count);
+ setTimeout(update, 20);
+ } else {
+ counter.innerText = target + (target === 0 ? '$' : target === 500 || target === 300 ? '+' : target === 24 ? '/7' : (target >= 1000 ? '+' : ''));
+ }
+ };
 
-    update();
-  });
+ update();
+ });
 </script>
 </body>
 </html>
+<!-- End of STATISTIKS.html -->
+<!-- Start of technology_section.html -->
 <!DOCTYPE html>
 
 <html dir="rtl" lang="he">
@@ -771,129 +668,129 @@ setInterval(updatePrices, 60000);
 <meta charset="utf-8"/>
 <title>הטכנולוגיה שלנו</title>
 <style>
-    body {
-      background-color: #000;
-      color: white;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
+ body {
+ background-color: transparent;
+ color: #eee;
+ font-family: Arial, sans-serif;
+ margin: 0;
+ padding: 0;
+ }
 
-    #technology {
-      padding: 60px 20px;
-      background-color: #000;
-      text-align: center;
-    }
+ #technology {
+ padding: 60px 20px;
+ background-color: transparent;
+ text-align: center;
+ }
 
-    #technology h2 {
-      color: #00e0ff;
-      font-size: 2.5em;
-      margin-bottom: 30px;
-    }
+ #technology h2 {
+ color: #00e0ff;
+ font-size: 2.5em;
+ margin-bottom: 30px;
+ }
 
-    .tech-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      max-width: 900px;
-      margin: auto;
-    }
+ .tech-grid {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 20px;
+ max-width: 900px;
+ margin: auto;
+ }
 
-    @media (max-width: 768px) {
-      .tech-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
+ @media (max-width: 768px) {
+ .tech-grid {
+ grid-template-columns: repeat(2, 1fr);
+ }
+ }
 
-    @media (max-width: 500px) {
-      .tech-grid {
-        grid-template-columns: 1fr;
-      }
-    }
+ @media (max-width: 500px) {
+ .tech-grid {
+ grid-template-columns: 1fr;
+ }
+ }
 
-    .tech-card {
-      background-color: #111;
-      border: 1px solid #00e0ff55;
-      padding: 20px;
-      border-radius: 15px;
-      transition: 0.3s;
-      cursor: pointer;
-    }
+ .tech-card {
+ background-color: #111;
+ border: 1px solid #00e0ff55;
+ padding: 20px;
+ border-radius: 15px;
+ transition: 0.3s;
+ cursor: pointer;
+ }
 
-    .tech-card:hover {
-      background-color: #111a;
-      transform: scale(1.03);
-    }
+ .tech-card:hover {
+ background-color: #111a;
+ transform: scale(1.03);
+ }
 
-    .tech-icon {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-    }
+ .tech-icon {
+ font-size: 2.5em;
+ margin-bottom: 10px;
+ }
 
-    .ai-icon {
-      display: inline-block;
-      padding: 5px 12px;
-      color: #ccc;
-      background: transparent;
-      font-weight: bold;
-      font-size: 1.2em;
-      border: 2px solid white;
-      border-radius: 6px;
-    }
+ .ai-icon {
+ display: inline-block;
+ padding: 5px 12px;
+ color: #ccc;
+ background: transparent;
+ font-weight: bold;
+ font-size: 1.2em;
+ border: 2px solid white;
+ border-radius: 6px;
+ }
 
-    .tech-card h3 {
-      color: #00e0ff;
-      margin: 10px 0;
-    }
+ .tech-card h3 {
+ color: #00e0ff;
+ margin: 10px 0;
+ }
 
-    .tech-card p {
-      color: #ccc;
-    }
+ .tech-card p {
+ color: #ccc;
+ }
 
-    .tech-card a {
-      display: inline-block;
-      margin-top: 10px;
-      color: #00e0ff;
-      text-decoration: underline;
-      cursor: pointer;
-    }
+ .tech-card a {
+ display: inline-block;
+ margin-top: 10px;
+ color: #00e0ff;
+ text-decoration: underline;
+ cursor: pointer;
+ }
 
-    .popup-overlay {
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background: rgba(0, 0, 0, 0.6);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
+ .popup-overlay {
+ position: fixed;
+ top: 0;
+ right: 0;
+ bottom: 0;
+ left: 0;
+ background: rgba(0, 0, 0, 0.6);
+ display: none;
+ justify-content: center;
+ align-items: center;
+ z-index: 1000;
+ }
 
-    .popup {
-      background: #001f2f;
-      padding: 30px;
-      border-radius: 12px;
-      max-width: 500px;
-      color: #fff;
-      text-align: right;
-      position: relative;
-    }
+ .popup {
+ background: #001f2f;
+ padding: 30px;
+ border-radius: 12px;
+ max-width: 500px;
+ color: #eee;
+ text-align: right;
+ position: relative;
+ }
 
-    .popup h3 {
-      color: #00e0ff;
-    }
+ .popup h3 {
+ color: #00e0ff;
+ }
 
-    .popup-close {
-      position: absolute;
-      top: 10px;
-      left: 15px;
-      color: white;
-      font-size: 20px;
-      cursor: pointer;
-    }
-  </style>
+ .popup-close {
+ position: absolute;
+ top: 10px;
+ left: 15px;
+ color: #eee;
+ font-size: 20px;
+ cursor: pointer;
+ }
+ </style>
 </head>
 <body>
 <section class="fade-in" id="technology">
@@ -947,26 +844,28 @@ setInterval(updatePrices, 60000);
 </div>
 </div>
 <script>
-  const popupTexts = [
-    `<h3>GraphSense</h3><p>GraphSense הוא כלי קוד פתוח לניתוח רשתות בלוקצ'יין. מאפשר מיפוי של ארנקים, קשרים בין עסקאות, וזיהוי דפוסים על גבי רשתות שונות. אידיאלי למחקר והבנת תעבורת קריפטו.</p>`,
-    `<h3>Chainalysis</h3><p>פלטפורמה מסחרית מובילה בתחום ניתוח הבלוקצ'יין. כוללת API ואינדיקטורים לזיהוי פעילות פלילית, ניתוח מגמות שוק, חיבור למערכות אכיפה ועוד.</p>`,
-    `<h3>Blockchain Explorer</h3><p>מאפשר צפייה בכל היסטוריית העסקאות, בלוקים, וארנקים על הרשת. חיוני למעקב אחר נתונים בזמן אמת וזיהוי פעילות חשודה.</p>`,
-    `<h3>דיווח בורסות</h3><p>פרוטוקול תקשורת אוטומטי המדווח לרשויות או לקוחות על פעילות חריגה, נפחי מסחר, ושינויים בהתנהגות של נכסים דיגיטליים בבורסות.</p>`,
-    `<h3>ML Patterns</h3><p>מערכת מבוססת למידת מכונה לזיהוי תבניות חריגות, עסקאות חשודות, ותחזיות סיכונים. מתאימה לפינטק, ציות, ו-AML.</p>`,
-    `<h3>Custom Explorer</h3><p>פלטפורמה גמישה לחקירה לפי צורך – ניתן לבחור פרמטרים כמו טווחי זמן, סוגי נכסים, ארנקים מסוימים ולהתאים את הניתוח בצורה פרטנית.</p>`
-  ];
+ const popupTexts = [
+ `<h3>GraphSense</h3><p>GraphSense הוא כלי קוד פתוח לניתוח רשתות בלוקצ'יין. מאפשר מיפוי של ארנקים, קשרים בין עסקאות, וזיהוי דפוסים על גבי רשתות שונות. אידיאלי למחקר והבנת תעבורת קריפטו.</p>`,
+ `<h3>Chainalysis</h3><p>פלטפורמה מסחרית מובילה בתחום ניתוח הבלוקצ'יין. כוללת API ואינדיקטורים לזיהוי פעילות פלילית, ניתוח מגמות שוק, חיבור למערכות אכיפה ועוד.</p>`,
+ `<h3>Blockchain Explorer</h3><p>מאפשר צפייה בכל היסטוריית העסקאות, בלוקים, וארנקים על הרשת. חיוני למעקב אחר נתונים בזמן אמת וזיהוי פעילות חשודה.</p>`,
+ `<h3>דיווח בורסות</h3><p>פרוטוקול תקשורת אוטומטי המדווח לרשויות או לקוחות על פעילות חריגה, נפחי מסחר, ושינויים בהתנהגות של נכסים דיגיטליים בבורסות.</p>`,
+ `<h3>ML Patterns</h3><p>מערכת מבוססת למידת מכונה לזיהוי תבניות חריגות, עסקאות חשודות, ותחזיות סיכונים. מתאימה לפינטק, ציות, ו-AML.</p>`,
+ `<h3>Custom Explorer</h3><p>פלטפורמה גמישה לחקירה לפי צורך – ניתן לבחור פרמטרים כמו טווחי זמן, סוגי נכסים, ארנקים מסוימים ולהתאים את הניתוח בצורה פרטנית.</p>`
+ ];
 
-  function openPopup(index) {
-    document.getElementById("popup-content").innerHTML = popupTexts[index];
-    document.getElementById("popup-overlay").style.display = "flex";
-  }
+ function openPopup(index) {
+ document.getElementById("popup-content").innerHTML = popupTexts[index];
+ document.getElementById("popup-overlay").style.display = "flex";
+ }
 
-  function closePopup() {
-    document.getElementById("popup-overlay").style.display = "none";
-  }
+ function closePopup() {
+ document.getElementById("popup-overlay").style.display = "none";
+ }
 </script>
 </body>
 </html>
+<!-- End of technology_section.html -->
+<!-- Start of partners_section.html -->
 <!DOCTYPE html>
 
 <html dir="rtl" lang="he">
@@ -975,58 +874,58 @@ setInterval(updatePrices, 60000);
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>שותפים ולקוחות</title>
 <style>
-    body {
-      background: #000;
-      color: white;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      direction: rtl;
-    }
+ body {
+ background: transparent;
+ color: #eee;
+ font-family: Arial, sans-serif;
+ margin: 0;
+ padding: 0;
+ direction: rtl;
+ }
 
-    section#partners {
-      padding: 2em;
-      text-align: center;
-    }
+ section#partners {
+ padding: 2em;
+ text-align: center;
+ }
 
-    section#partners h2 {
-      font-size: 2em;
-      margin-bottom: 2.8em;
-    }
+ section#partners h2 {
+ font-size: 2em;
+ margin-bottom: 2.8em;
+ }
 
-    .partners-carousel {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0.5em;
-      justify-items: center;
-    }
+ .partners-carousel {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 0.5em;
+ justify-items: center;
+ }
 
-    .partner {
-      background: linear-gradient(145deg, rgba(200, 255, 255, 0.08), rgba(150, 200, 200, 0.06));
-      box-shadow: 0 0 10px rgba(0, 255, 255, 0.15);
-      border-radius: 15px;
-      transition: transform 0.2s ease;
-      position: relative;
-      font-size: 0.9em;
-      width: 100%;
-      max-width: 300px;
-      height: 120px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
+ .partner {
+ background: linear-gradient(145deg, rgba(200, 255, 255, 0.08), rgba(150, 200, 200, 0.06));
+ box-shadow: 0 0 10px rgba(0, 255, 255, 0.15);
+ border-radius: 15px;
+ transition: transform 0.2s ease;
+ position: relative;
+ font-size: 0.9em;
+ width: 100%;
+ max-width: 300px;
+ height: 120px;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ text-align: center;
+ }
 
-    .partner:hover {
-      transform: scale(1.05);
-    }
+ .partner:hover {
+ transform: scale(1.05);
+ }
 
-    .partner div {
-      font-size: 2em;
-      margin-bottom: 0.3em;
-    }
-  </style>
+ .partner div {
+ font-size: 2em;
+ margin-bottom: 0.3em;
+ }
+ </style>
 </head>
 <body>
 <section id="partners">
@@ -1060,6 +959,8 @@ setInterval(updatePrices, 60000);
 </section>
 </body>
 </html>
+<!-- End of partners_section.html -->
+<!-- Start of faq-upgraded.html -->
 <!DOCTYPE html>
 
 <html dir="rtl" lang="he">
@@ -1068,61 +969,61 @@ setInterval(updatePrices, 60000);
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>שאלות נפוצות</title>
 <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #111;
-      color: #fff;
-      padding: 2rem;
-    }
-    #faq {
-      max-width: 800px;
-      margin: auto;
-    }
-    h2 {
-      text-align: center;
-      margin-bottom: 1.5rem;
-      font-size: 2rem;
-    }
-    .faq-filter input {
-      width: 100%;
-      padding: 10px;
-      font-size: 1rem;
-      border: none;
-      border-radius: 5px;
-      margin-bottom: 2rem;
-    }
-    .faq-item {
-      background: #1e1e1e;
-      margin-bottom: 10px;
-      border-radius: 5px;
-      overflow: hidden;
-      transition: all 0.3s ease;
-    }
-    .faq-question {
-      padding: 15px;
-      background: #222;
-      cursor: pointer;
-      font-weight: bold;
-      position: relative;
-    }
-    .faq-question::after {
-      content: '+';
-      position: absolute;
-      left: 20px;
-    }
-    .faq-item.active .faq-question::after {
-      content: '-';
-    }
-    .faq-answer {
-      display: none;
-      padding: 15px;
-      background: #333;
-      border-top: 1px solid #444;
-    }
-    .faq-item.active .faq-answer {
-      display: block;
-    }
-  </style>
+ body {
+ font-family: Arial, sans-serif;
+ background: #111;
+ color: #eee;
+ padding: 2rem;
+ }
+ #faq {
+ max-width: 800px;
+ margin: auto;
+ }
+ h2 {
+ text-align: center;
+ margin-bottom: 1.5rem;
+ font-size: 2rem;
+ }
+ .faq-filter input {
+ width: 100%;
+ padding: 10px;
+ font-size: 1rem;
+ border: none;
+ border-radius: 5px;
+ margin-bottom: 2rem;
+ }
+ .faq-item {
+ background: #1e1e1e;
+ margin-bottom: 10px;
+ border-radius: 5px;
+ overflow: hidden;
+ transition: all 0.3s ease;
+ }
+ .faq-question {
+ padding: 15px;
+ background: #222;
+ cursor: pointer;
+ font-weight: bold;
+ position: relative;
+ }
+ .faq-question::after {
+ content: '+';
+ position: absolute;
+ left: 20px;
+ }
+ .faq-item.active .faq-question::after {
+ content: '-';
+ }
+ .faq-answer {
+ display: none;
+ padding: 15px;
+ background: #333;
+ border-top: 1px solid #444;
+ }
+ .faq-item.active .faq-answer {
+ display: block;
+ }
+ </style>
 </head>
 <body>
 <section class="fade-in" id="faq">
@@ -1154,27 +1055,29 @@ setInterval(updatePrices, 60000);
 </div>
 </section>
 <script>
-    const questions = document.querySelectorAll('.faq-question');
-    questions.forEach(q => {
-      q.addEventListener('click', () => {
-        q.parentElement.classList.toggle('active');
-      });
-    });
+ const questions = document.querySelectorAll('.faq-question');
+ questions.forEach(q => {
+ q.addEventListener('click', () => {
+ q.parentElement.classList.toggle('active');
+ });
+ });
 
-    document.getElementById('faq-search').addEventListener('input', function () {
-      const search = this.value.toLowerCase();
-      document.querySelectorAll('.faq-item').forEach(item => {
-        const question = item.querySelector('.faq-question').innerText.toLowerCase();
-        if (question.includes(search)) {
-          item.style.display = '';
-        } else {
-          item.style.display = 'none';
-        }
-      });
-    });
-  </script>
+ document.getElementById('faq-search').addEventListener('input', function () {
+ const search = this.value.toLowerCase();
+ document.querySelectorAll('.faq-item').forEach(item => {
+ const question = item.querySelector('.faq-question').innerText.toLowerCase();
+ if (question.includes(search)) {
+ item.style.display = '';
+ } else {
+ item.style.display = 'none';
+ }
+ });
+ });
+ </script>
 </body>
 </html>
+<!-- End of faq-upgraded.html -->
+<!-- Start of updated_case_form.html -->
 <!DOCTYPE html>
 
 <html lang="he">
@@ -1184,8 +1087,8 @@ setInterval(updatePrices, 60000);
 <title>טופס פתיחת תיק</title>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@500;600&amp;display=swap" rel="stylesheet"/>
 </head>
-<body style="background-color: #111; color: white; font-family: 'Heebo', sans-serif; margin: 0; padding: 2em;">
-<section id="contact" style="background-color: #1e1e1e; padding: 4em 2em; color: white;">
+<body style="background-color: #111; color: #eee; font-family: 'Heebo', sans-serif; margin: 0; padding: 2em;">
+<section id="contact" style="background-color: #1e1e1e; padding: 4em 2em; color: #eee;">
 <div style="max-width: 700px; margin: auto;">
 <h2 style="text-align: center; font-size: 2em; margin-bottom: 1em;">פתיחת תיק חקירה</h2>
 <form id="crypto-form" style="background: #2b2b2b; padding: 2em; border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.3);">
@@ -1199,33 +1102,35 @@ setInterval(updatePrices, 60000);
 <input name="entry.2111394124" style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 6px; border: none; font-size: 1rem;" type="text"/>
 <label style="display: block; margin-bottom: 6px;">Case Details / Additional Information</label>
 <textarea name="entry.138729086" rows="5" style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 6px; border: none; font-size: 1rem;"></textarea>
-<button style="background-color: #4CAF50; color: white; padding: 12px 25px; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem;" type="submit">שלח</button>
+<button style="background-color: #4CAF50; color: #eee; padding: 12px 25px; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem;" type="submit">שלח</button>
 </form>
-<div id="form-success-message" style="display: none; margin-top: 20px; background: #28a745; color: white; padding: 15px; text-align: center; border-radius: 8px;">
-      תודה! פנייתך נשלחה בהצלחה.
-    </div>
+<div id="form-success-message" style="display: none; margin-top: 20px; background: #28a745; color: #eee; padding: 15px; text-align: center; border-radius: 8px;">
+ תודה! פנייתך נשלחה בהצלחה.
+ </div>
 </div>
 <script>
-    document.getElementById("crypto-form").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const form = e.target;
-      const data = new FormData(form);
-      fetch("https://docs.google.com/forms/d/e/1FAIpQLSfDscS_egf-q0W4pYCwIC0erIsq2sU7x9fONsiyg10Yu2ljvg/formResponse", {
-        method: "POST",
-        mode: "no-cors",
-        body: data
-      }).then(() => {
-        document.getElementById("form-success-message").style.display = "block";
-        form.reset();
-      }).catch((error) => {
-        alert("אירעה שגיאה בשליחה");
-        console.error("Error:", error);
-      });
-    });
+ document.getElementById("crypto-form").addEventListener("submit", function(e) {
+ e.preventDefault();
+ const form = e.target;
+ const data = new FormData(form);
+ fetch("https://docs.google.com/forms/d/e/1FAIpQLSfDscS_egf-q0W4pYCwIC0erIsq2sU7x9fONsiyg10Yu2ljvg/formResponse", {
+ method: "POST",
+ mode: "no-cors",
+ body: data
+ }).then(() => {
+ document.getElementById("form-success-message").style.display = "block";
+ form.reset();
+ }).catch((error) => {
+ alert("אירעה שגיאה בשליחה");
+ console.error("Error:", error);
+ });
+ });
 </script>
 </section>
 </body>
 </html>
+<!-- End of updated_case_form.html -->
+<!-- Start of footer_cryptono.html -->
 <!DOCTYPE html>
 
 <html dir="rtl" lang="he">
@@ -1233,29 +1138,30 @@ setInterval(updatePrices, 60000);
 <meta charset="utf-8"/>
 <title>שורת ניווט תחתונה</title>
 <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Arial', sans-serif;
-      background-color: #f0f0f0;
-    }
+ body {
+ margin: 0;
+ padding: 0;
+ font-family: 'Arial', sans-serif;
+ background-color: #f0f0f0;
+ }
 
-    .footer {
-      background-color: #000;
-      color: #ccc; /* צבע אפור בהיר במקום לבן */
-      text-align: center;
-      padding: 1rem 0;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      font-size: 0.95rem;
-      z-index: 1000;
-    }
-  </style>
+ .footer {
+ background-color: transparent;
+ color: #ccc; /* צבע אפור בהיר במקום לבן */
+ text-align: center;
+ padding: 1rem 0;
+ position: fixed;
+ bottom: 0;
+ width: 100%;
+ font-size: 0.95rem;
+ z-index: 1000;
+ }
+ </style>
 </head>
 <body>
 <div class="footer">
-    © 2025 CRYPTONO - כל הזכויות שמורות | עיצוב ופיתוח
-  </div>
+ © 2025 CRYPTONO - כל הזכויות שמורות | עיצוב ופיתוח
+ </div>
 </body>
 </html>
+<!-- End of footer_cryptono.html -->
