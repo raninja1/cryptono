@@ -139,12 +139,6 @@ body, section, h1, h2, h3, h4, h5, h6, p, ul, ol, li, label, input, textarea, sp
 <a class="nav-btn red-highlight" href="#contact">פתח חקירה</a>
 </nav>
 </header>
-
-
-
-
-
-
 </body>
 </html>
 <!-- End of cryptono_header.html -->
@@ -214,6 +208,87 @@ body, section, h1, h2, h3, h4, h5, h6, p, ul, ol, li, label, input, textarea, sp
  חקירות בלוקצ'יין, גשרים וארנקים
  </p>
 <a class="cta-button" href="#services">למד/י עוד</a>
+<style>
+.crypto-ticker {
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 10px 0;
+  margin-top: 20px;
+  font-family: 'Heebo', sans-serif;
+  font-size: 16px;
+  direction: rtl;
+  background-color: transparent;
+}
+.crypto-content {
+  display: inline-block;
+  animation: scroll 35s linear infinite;
+  color: #fff;
+}
+.crypto-item {
+  display: inline-block;
+  margin: 0 20px;
+}
+.crypto-price {
+  margin-left: 6px;
+}
+.up {
+  color: #00ff87;
+}
+.down {
+  color: #ff4d4d;
+}
+@keyframes scroll {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
+}
+.icon {
+  width: 16px;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+</style>
+<div class="crypto-ticker">
+<div class="crypto-content" id="cryptoTicker">
+    טוען מחירים...
+  </div>
+</div>
+<script>
+const coins = {
+  bitcoin: { symbol: "BTC", icon: "https://assets.coingecko.com/coins/images/1/small/bitcoin.png" },
+  ethereum: { symbol: "ETH", icon: "https://assets.coingecko.com/coins/images/279/small/ethereum.png" },
+  solana: { symbol: "SOL", icon: "https://assets.coingecko.com/coins/images/4128/small/solana.png" },
+  binancecoin: { symbol: "BNB", icon: "https://assets.coingecko.com/coins/images/825/small/binance-coin-logo.png" },
+  dogecoin: { symbol: "DOGE", icon: "https://assets.coingecko.com/coins/images/5/small/dogecoin.png" }
+};
+
+async function updatePrices() {
+  const priceURL = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana,binancecoin,dogecoin&vs_currencies=usd&include_24hr_change=true";
+  const res = await fetch(priceURL);
+  const data = await res.json();
+  const container = document.getElementById("cryptoTicker");
+  container.innerHTML = "";
+  let content = '';
+  for (let key in coins) {
+    const { symbol, icon } = coins[key];
+    const price = data[key].usd.toFixed(2);
+    const change = data[key].usd_24h_change.toFixed(2);
+    const changeClass = change >= 0 ? "up" : "down";
+    const changeSymbol = change >= 0 ? "▲" : "▼";
+    content += `
+      <span class="crypto-item">
+        <img class="icon" src="${icon}" alt="${symbol}" />
+        ${symbol}:
+        <span class="crypto-price">$${price}</span>
+        <span class="${changeClass}">${changeSymbol} ${Math.abs(change)}%</span>
+      </span>
+    `;
+  }
+  container.innerHTML = content + content;
+}
+updatePrices();
+setInterval(updatePrices, 60000);
+</script>
+
 </section>
 </body>
 </html>
@@ -1188,7 +1263,6 @@ body, section, h1, h2, h3, h4, h5, h6, p, ul, ol, li, label, input, textarea, sp
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@500;600&amp;display=swap" rel="stylesheet"/>
 </head>
 <body style="background-color: #111; color: #eee; font-family: 'Heebo', sans-serif; margin: 0; padding: 2em;">
-
 </body>
 </html>
 <!-- End of updated_case_form.html -->
