@@ -58,15 +58,74 @@ html {
 }
 
 body {
-  background-image: url('https://res.cloudinary.com/dreoq0pxm/image/upload/v1748557522/7db8882bd-2773-4990-8858-31605c5bef55%D7%9Cef71_tyykos.png');
+  margin: 0;
+  background-color: transparent;
+  background-image: url('https://res.cloudinary.com/dreoq0pxm/image/upload/v1748640344/background_cryptono_rkmxop.png');
   background-attachment: fixed;
   background-size: 110%;
   background-position: center top;
   background-repeat: no-repeat;
   z-index: -1;
 }
-</style></head>
-<body>
+
+body, section, h1, h2, h3, h4, h5, h6, p, ul, ol, li, label, input, textarea, span, div {
+  color: #ffffff !important;
+  font-family: 'Segoe UI', 'Rubik', 'Heebo', sans-serif !important;
+}
+</style>
+<style>
+.form-subtitle {
+  text-align: center;
+  font-size: 0.95em;
+  color: #ccc;
+  margin-bottom: 1.5em;
+}
+#crypto-form {
+  background: rgba(40, 40, 40, 0.7);
+  padding: 2em;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(3px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+#crypto-form:hover {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+#crypto-form label {
+  display: block;
+  margin-bottom: 6px;
+  color: #eee;
+}
+#crypto-form input,
+#crypto-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  font-size: 1rem;
+  background: #1c1c1c;
+  color: #fff;
+}
+#crypto-form button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+#crypto-form button:hover {
+  background-color: #43a047;
+}
+</style>
+</head>
+<body><div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -10; background-image: url('https://res.cloudinary.com/dreoq0pxm/image/upload/v1748640344/background_cryptono_rkmxop.png'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
 <header style="background: transparent; padding:1rem 2rem; position:sticky; top:0; z-index:1000; display:flex; justify-content:space-between; align-items:center;border-bottom: 1px solid #004466; direction: rtl; backdrop-filter: blur(4px);">
 <div class="logo" style="font-weight:bold; font-size:1.6em; color:#00e0ff; letter-spacing:1px;">CRYPTONO.ai</div>
 <nav style="display:flex; gap:0.5rem;">
@@ -80,6 +139,10 @@ body {
 <a class="nav-btn red-highlight" href="#contact">פתח חקירה</a>
 </nav>
 </header>
+
+
+
+
 
 
 </body>
@@ -144,7 +207,7 @@ body {
  </style>
 </head>
 <body>
-<section id="home">
+<section id="home" style="; position: relative; z-index: 1;">
 <h1>Cryptono.AI</h1>
 <p>
  מעקב אחר מטבעות קריפטו<br/>
@@ -199,7 +262,7 @@ body {
  </style>
 </head>
 <body>
-<section class="fade-in" id="what-we-do">
+<section class="fade-in" id="what-we-do" style="; position: relative; z-index: 1;">
 <h2>אודות</h2>
 <div class="container">
 <p><strong>מובילי תחום האיתור הפלילי בעולם הקריפטו</strong></p>
@@ -338,7 +401,7 @@ body {
  </script>
 </head>
 <body>
-<section id="services">
+<section id="services" style="; position: relative; z-index: 1;">
 <h2>השירותים שלנו – הגנה מקצה לקצה</h2>
 <div class="services-grid">
 <div class="service-card"><h3>מיפוי ארנקים</h3><button class="info-button" onclick="openPopup('wallets')">למידע נוסף</button></div>
@@ -378,7 +441,7 @@ body {
 </html>
 <!-- End of services_section_popup.html -->
 <!-- Start of how_it_works_section.html -->
-<section class="process-flow" id="how-it-works">
+<section class="process-flow" id="how-it-works" style="; position: relative; z-index: 1;">
 <h2>תהליך</h2>
 <hr class="divider"/>
 <div class="underline"></div>
@@ -606,7 +669,7 @@ body {
  </style>
 </head>
 <body>
-<section id="statistics">
+<section id="statistics" style="; position: relative; z-index: 1;">
 <h2>המספרים מדברים בעד עצמם</h2>
 <div class="circle-grid">
 <div class="circle">
@@ -791,7 +854,7 @@ body {
  </style>
 </head>
 <body>
-<section class="fade-in" id="technology">
+<section class="fade-in" id="technology" style="; position: relative; z-index: 1;">
 <h2>הטכנולוגיה שלנו</h2>
 <div class="tech-grid">
 <div class="tech-card" onclick="openPopup(0)">
@@ -926,7 +989,7 @@ body {
  </style>
 </head>
 <body>
-<section id="partners">
+<section id="partners" style="; position: relative; z-index: 1;">
 <h2>שותפים ולקוחות</h2>
 <div class="partners-carousel">
 <div class="partner">
@@ -1024,7 +1087,7 @@ body {
  </style>
 </head>
 <body>
-<section class="fade-in" id="faq">
+<section class="fade-in" id="faq" style="; position: relative; z-index: 1;">
 <h2>שאלות נפוצות</h2>
 <div class="faq-filter">
 <input id="faq-search" placeholder="חפש שאלה..." type="text"/>
@@ -1051,6 +1114,45 @@ body {
 <div class="faq-answer">עלויות משתנות בהתאם להיקף וטיב השירות – ניתן לקבל ייעוץ ראשוני ללא עלות.</div>
 </div>
 </div>
+</section><section id="contact">
+<div style="max-width: 600px; margin: auto;">
+<h2>בצע פניה לפתיחת תיק חקירה</h2>
+<p class="form-subtitle">אנא ספקו את מלוא הראיות שברשותכם לצורך טיפול מדויק ויעיל. אנו נעשה את מירב המאמצים לחזור אליכם במהרה ולפתוח תיק חקירה מסודר — במטרה להגיע לפתרון מוצלח בהקדם.</p>
+<form id="crypto-form">
+<label>Full Name</label>
+<input name="entry.518571143" required="" type="text"/>
+<label>E-mail</label>
+<input name="entry.1246645147" required="" type="email"/>
+<label>Phone Number</label>
+<input name="entry.1405859902" type="tel"/>
+<label>Wallet Address</label>
+<input name="entry.2111394124" type="text"/>
+<label>Case Details / Additional Information</label>
+<textarea name="entry.138729086" rows="5"></textarea>
+<button type="submit">שלח</button>
+</form>
+<div id="form-success-message" style="display: none; margin-top: 20px; background: #28a745; color: white; padding: 15px; text-align: center; border-radius: 8px;">
+      תודה! פנייתך נשלחה בהצלחה.
+</div>
+</div>
+<script>
+    document.getElementById("crypto-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
+      fetch("https://docs.google.com/forms/d/e/1FAIpQLSfDscS_egf-q0W4pYCwIC0erIsq2sU7x9fONsiyg10Yu2ljvg/formResponse", {
+        method: "POST",
+        mode: "no-cors",
+        body: data
+      }).then(() => {
+        document.getElementById("form-success-message").style.display = "block";
+        form.reset();
+      }).catch((error) => {
+        alert("אירעה שגיאה בשליחה");
+        console.error("Error:", error);
+      });
+    });
+</script>
 </section>
 <script>
  const questions = document.querySelectorAll('.faq-question');
@@ -1086,45 +1188,7 @@ body {
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@500;600&amp;display=swap" rel="stylesheet"/>
 </head>
 <body style="background-color: #111; color: #eee; font-family: 'Heebo', sans-serif; margin: 0; padding: 2em;">
-<section id="contact" style="background-color: #1e1e1e; padding: 4em 2em; color: #eee;">
-<div style="max-width: 700px; margin: auto;">
-<h2 style="text-align: center; font-size: 2em; margin-bottom: 1em;">פתיחת תיק חקירה</h2>
-<form id="crypto-form" style="background: #2b2b2b; padding: 2em; border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.3);">
-<label style="display: block; margin-bottom: 6px;">Full Name</label>
-<input name="entry.518571143" required="" style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 6px; border: none; font-size: 1rem;" type="text"/>
-<label style="display: block; margin-bottom: 6px;">E-mail</label>
-<input name="entry.1246645147" required="" style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 6px; border: none; font-size: 1rem;" type="email"/>
-<label style="display: block; margin-bottom: 6px;">Phone Number</label>
-<input name="entry.1405859902" style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 6px; border: none; font-size: 1rem;" type="tel"/>
-<label style="display: block; margin-bottom: 6px;">Wallet Address</label>
-<input name="entry.2111394124" style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 6px; border: none; font-size: 1rem;" type="text"/>
-<label style="display: block; margin-bottom: 6px;">Case Details / Additional Information</label>
-<textarea name="entry.138729086" rows="5" style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 6px; border: none; font-size: 1rem;"></textarea>
-<button style="background-color: #4CAF50; color: #eee; padding: 12px 25px; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem;" type="submit">שלח</button>
-</form>
-<div id="form-success-message" style="display: none; margin-top: 20px; background: #28a745; color: #eee; padding: 15px; text-align: center; border-radius: 8px;">
- תודה! פנייתך נשלחה בהצלחה.
- </div>
-</div>
-<script>
- document.getElementById("crypto-form").addEventListener("submit", function(e) {
- e.preventDefault();
- const form = e.target;
- const data = new FormData(form);
- fetch("https://docs.google.com/forms/d/e/1FAIpQLSfDscS_egf-q0W4pYCwIC0erIsq2sU7x9fONsiyg10Yu2ljvg/formResponse", {
- method: "POST",
- mode: "no-cors",
- body: data
- }).then(() => {
- document.getElementById("form-success-message").style.display = "block";
- form.reset();
- }).catch((error) => {
- alert("אירעה שגיאה בשליחה");
- console.error("Error:", error);
- });
- });
-</script>
-</section>
+
 </body>
 </html>
 <!-- End of updated_case_form.html -->
